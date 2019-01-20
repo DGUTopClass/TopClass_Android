@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
 
-public class SummitedHWViewHolder extends RecyclerView.ViewHolder implements HomeworkViewHolder {
+public class SummitedHWViewHolder extends RecyclerView.ViewHolder {
     public TextView tvTitle;
     public TextView tvSubject;
     public TextView tvIsSummited;
@@ -28,25 +28,4 @@ public class SummitedHWViewHolder extends RecyclerView.ViewHolder implements Hom
 
         lyFeedback = (LinearLayout) itemView.findViewById(R.id.ly_feedback);
     }
-
-    @Override
-    public TextView getHWTitle() { return tvTitle; }
-
-    @Override
-    public TextView getSubjectTitle() { return tvSubject; }
-
-    @Override
-    public View getPriority() { return null; }
-
-    @Override
-    public TextView getDeadLine() { return null; }
-
-    @Override
-    public Button getScore() { return btnScore; }
-
-    @Override
-    public TextView getIsSummited() { return tvIsSummited; }
-
-    @Override
-    public TextView getFeedback() { return tvFeedback; }
 }

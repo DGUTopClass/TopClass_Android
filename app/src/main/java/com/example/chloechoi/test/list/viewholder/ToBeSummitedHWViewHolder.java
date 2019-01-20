@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
 
-public class ToBeSummitedHWViewHolder extends RecyclerView.ViewHolder implements HomeworkViewHolder {
+public class ToBeSummitedHWViewHolder extends RecyclerView.ViewHolder {
     public View vPriority;
     public TextView tvTitle;
     public TextView tvSubject;
@@ -22,25 +22,4 @@ public class ToBeSummitedHWViewHolder extends RecyclerView.ViewHolder implements
         tvSubject = (TextView) itemView.findViewById(R.id.tv_subject);
         tvDeadLine = (TextView) itemView.findViewById(R.id.tv_deadline);
     }
-
-    @Override
-    public TextView getHWTitle() { return tvTitle; }
-
-    @Override
-    public TextView getSubjectTitle() { return tvSubject; }
-
-    @Override
-    public View getPriority() { return vPriority; }
-
-    @Override
-    public TextView getDeadLine() { return tvDeadLine; }
-
-    @Override
-    public Button getScore() { return null; }
-
-    @Override
-    public TextView getIsSummited() { return null; }
-
-    @Override
-    public TextView getFeedback() { return null; }
 }
