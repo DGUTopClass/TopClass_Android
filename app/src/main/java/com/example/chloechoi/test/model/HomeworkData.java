@@ -1,4 +1,4 @@
-package com.example.chloechoi.test;
+package com.example.chloechoi.test.model;
 
 public class HomeworkData {
     public String title;

@@ -1,10 +1,12 @@
-package com.example.chloechoi.test;
+package com.example.chloechoi.test.list.viewholder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.chloechoi.test.R;
 
 public class HomeworkViewHolder extends RecyclerView.ViewHolder{
     public TextView tvTitle;

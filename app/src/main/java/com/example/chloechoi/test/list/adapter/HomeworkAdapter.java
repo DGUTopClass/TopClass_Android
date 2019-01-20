@@ -1,4 +1,4 @@
-package com.example.chloechoi.test;
+package com.example.chloechoi.test.list.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -6,6 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.chloechoi.test.model.HomeworkData;
+import com.example.chloechoi.test.R;
+import com.example.chloechoi.test.list.viewholder.HomeworkViewHolder;
 
 import java.util.ArrayList;
 
