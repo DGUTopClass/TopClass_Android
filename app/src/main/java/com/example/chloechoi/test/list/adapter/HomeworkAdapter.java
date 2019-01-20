@@ -53,10 +53,13 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if(type == constants.TYPE_TO_BE_SUMMITED_HW){
             ToBeSummitedHWViewHolder castedHolder = (ToBeSummitedHWViewHolder) holder;
 
-            castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2)); // 이거 데이터에서 가져와야함
+            castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2));
+            /*TODO 시연아^^ 이거^^ 서버에서 받으면 deadline이라는 날짜를 나타내는 string이 넘어와^^
+            * 이걸 잘 잘라서 오늘 날짜(받아오는 함수 있음^~^)랑 비교해서 color 바꿔주면돼*^^* */
+
             castedHolder.tvTitle.setText(dataList.get(i).title);
             castedHolder.tvSubject.setText(dataList.get(i).subject);
-            castedHolder.tvDeadLine.setText("12/25 00:00");/*TODO have to fix dataList type*/
+            castedHolder.tvDeadLine.setText(dataList.get(i).deadline);
         }
         else{
             final SummitedHWViewHolder castedHolder = (SummitedHWViewHolder) holder;
