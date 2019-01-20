@@ -9,13 +9,13 @@ import android.view.ViewGroup;
 
 import com.example.chloechoi.test.model.HomeworkData;
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.list.viewholder.HomeworkViewHolder;
+import com.example.chloechoi.test.list.viewholder.SummitedHWViewHolder;
 
 import java.util.ArrayList;
 
 import static android.view.View.GONE;
 
-public class HomeworkAdapter extends RecyclerView.Adapter<HomeworkViewHolder> {
+public class HomeworkAdapter extends RecyclerView.Adapter<SummitedHWViewHolder> {
     private ArrayList<HomeworkData> dataList;
     Context mContext;
     public HomeworkAdapter(ArrayList<HomeworkData> itemList) {
@@ -24,19 +24,19 @@ public class HomeworkAdapter extends RecyclerView.Adapter<HomeworkViewHolder> {
 
     @NonNull
     @Override
-    public HomeworkViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public SummitedHWViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.li_summited_hw, viewGroup, false);
         mContext = viewGroup.getContext();
-        HomeworkViewHolder holder = new HomeworkViewHolder(v);
+        SummitedHWViewHolder holder = new SummitedHWViewHolder(v);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final HomeworkViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull final SummitedHWViewHolder holder, int i) {
         holder.tvTitle.setText(dataList.get(i).title);
         holder.tvSubject.setText(dataList.get(i).subject);
-//        holder.tvIsHanded.setText(dataList.get(i).isHanded);
-        if(dataList.get(i).isHanded) holder.tvIsHanded.setVisibility(View.INVISIBLE);
+//        holder.tvIsSummited.setText(dataList.get(i).isHanded);
+        if(dataList.get(i).isHanded) holder.tvIsSummited.setVisibility(View.INVISIBLE);
         holder.btnScore.setText(dataList.get(i).toTvScore());
 
         holder.btnScore.setOnClickListener(
