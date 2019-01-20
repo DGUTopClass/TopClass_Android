@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<HomeworkData> item = new ArrayList<HomeworkData>();
         for(int i=0; i<5; i++){
-            item.add(new HomeworkData().getDummy());
+            item.add(new HomeworkData().getSummitedDummy());
             if(i == 3) item.get(i).isHanded = true;
 
         }
