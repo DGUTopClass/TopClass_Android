@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="과목명"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/todo_border_bottom"></View>
+            <Spinner
+                android:layout_width="220dp"
+                android:layout_height="match_parent"></Spinner>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="40dp">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="과제명"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/todo_border_bottom"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="29dp"
+                android:layout_height="24dp"
+                android:text="설명"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/todo_border"
+                android:hint="과제 설명 입력"
+                android:textSize="13dp"
+                android:gravity="start"
+                android:paddingTop="8dp"
+                android:paddingLeft="8dp"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    // custom datepicker timepicker 구현 해야할 듯 / 우선 그냥 Text로 넣어
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="37dp">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기간"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="시작"
+                android:textSize="16dp"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12월 30일 (일)   17:00"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="39dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <RelativeLayout
+            android:layout_width="96dp"
+            android:layout_height="24dp">
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="종료"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12월 30일 (일)   18:00"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="39dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
