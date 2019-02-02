@@ -14,12 +14,12 @@ import com.example.chloechoi.test.utility.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvSignIn;
-    List<EditText> edtList;
+    List<EditText> edtList = new ArrayList<>();
 
-    List<String> strInputs;
+    List<String> strInputs = new ArrayList<>();
 
     String[] msgs = {Constants.TYPE_STUDENT_ID, Constants.TYPE_PASSWORD};
 
@@ -29,24 +29,16 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signin);
 
         initialUI();
-
-        tvSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getInput();
-
-                if(checkInputs()){
-//                    TODO 모든 입력을 받음 > 서버에 유효한 학번 및 비번인지 확인
-                }
-            }
-        });
     }
 
     void initialUI(){
         tvSignIn = (TextView)findViewById(R.id.tv_signin);
+        tvSignIn.setOnClickListener(this);
 
         edtList.add((EditText) findViewById(R.id.edt_student_id));
+        edtList.get(0).setOnClickListener(this);
         edtList.add((EditText) findViewById(R.id.edt_password));
+        edtList.get(1).setOnClickListener(this);
 
     }
 
@@ -69,5 +61,20 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if( v == tvSignIn){
+            getInput();
+
+            if(checkInputs()){
+//                    TODO 모든 입력을 받음 > 서버에 유효한 학번 및 비번인지 확인
+            }
+        }
+
+        else if( v == edtList.get(0)) edtList.get(0).setText("");
+        else if( v == edtList.get(1)) edtList.get(1).setText("");
+
     }
 }
