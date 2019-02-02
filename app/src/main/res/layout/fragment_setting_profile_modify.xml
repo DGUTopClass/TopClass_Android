@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF">
+
+
+        <Button
+            android:id="@+id/setting_back_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학번 및 비밀번호"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/setting_back_btn"
+            android:layout_marginLeft="21dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/setting_profile_studentnumtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#707070"
+            android:text="학번"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"/>
+
+        <EditText
+            android:id="@+id/setting_profile_studentnum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016112141"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginLeft="15dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#707070"
+            android:text="현재 비밀번호"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"/>
+
+        <EditText
+            android:id="@+id/setting_profile_modify_nowpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#707070"
+            android:text="새 비밀번호"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"/>
+
+        <EditText
+            android:id="@+id/setting_profile_modify_newpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:textColor="#707070"
+            android:text="현재 비밀번호"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="14dp"/>
+
+        <EditText
+            android:id="@+id/setting_profile_modify_renewpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="15dp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#F8901F"
+            android:text="변경 저장"
+            android:textColor="#FFFFFF"
+            android:textSize="17dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</LinearLayout>
