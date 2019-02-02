@@ -1,4 +1,4 @@
-package com.example.chloechoi.test.activities;
+package com.example.chloechoi.test.activities.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
