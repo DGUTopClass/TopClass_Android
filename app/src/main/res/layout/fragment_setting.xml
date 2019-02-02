@@ -37,7 +37,7 @@
         android:background="#FFFFFF">
         
         <ImageView
-            android:id="@+id/setting_person_img"
+            android:id="@+id/setting_user_img"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_centerVertical="true"
@@ -49,7 +49,7 @@
             android:text="학번 및 비밀번호"
             android:textColor="#000000"
             android:textSize="16dp"
-            android:layout_toRightOf="@+id/setting_person_img"
+            android:layout_toRightOf="@+id/setting_user_img"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"/>
         
