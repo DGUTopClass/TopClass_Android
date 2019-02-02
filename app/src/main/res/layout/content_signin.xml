@@ -38,12 +38,14 @@
         android:layout_marginTop="81dp">
 
         <EditText
+            android:id="@+id/edt_student_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edt_underline"
             android:text="학번" />
 
         <EditText
+            android:id="@+id/edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edt_underline"
