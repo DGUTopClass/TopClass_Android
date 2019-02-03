@@ -97,16 +97,16 @@
                     
                 </LinearLayout>
 
-                //DatePicker
-                <View
+                <DatePicker
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_top_border"
                     android:padding="2dp"
                     android:datePickerMode="spinner"
+                    android:calendarViewShown="false"
                     >
 
-                </View>
+                </DatePicker>
 
             </LinearLayout>
 
@@ -136,13 +136,12 @@
 
                 </LinearLayout>
 
-                //TimePicker
-                <View
+                <TimePicker
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_top_border"
                     android:padding="2dp"
-                    android:datePickerMode="spinner"
+                    android:timePickerMode="spinner"
                     >
 
                 </>
