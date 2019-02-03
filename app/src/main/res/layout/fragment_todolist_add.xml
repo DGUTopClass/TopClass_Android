@@ -112,7 +112,7 @@
 
     </LinearLayout>
 
-    // custom datepicker timepicker 구현 해야할 듯 / 우선 그냥 Text로 넣어
+    // 시작, 종료 default 뭘로 할지 !
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="24dp"
@@ -145,6 +145,7 @@
                 android:textSize="16dp"/>
             
             <TextView
+                android:id="@+id/tv_add_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12월 30일 (일)   17:00"
@@ -180,6 +181,7 @@
                 android:textSize="16dp"/>
 
             <TextView
+                android:id="@+id/tv_add_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12월 30일 (일)   18:00"
