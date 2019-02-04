@@ -142,9 +142,9 @@
                     android:background="@drawable/picker_top_border"
                     android:padding="2dp"
                     android:timePickerMode="spinner"
-                    >
+                    />
 
-                </>
+
 
             </LinearLayout>
 
