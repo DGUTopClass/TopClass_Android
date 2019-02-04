@@ -4,7 +4,7 @@ public class HomeworkData {
     public String title;
     public String subject;
     public Boolean isHanded;
-    public double score;
+    public double score; // TODO 이거 string 으로 바꿔야함!!!!
     public String feedback;
 
     public String deadline;
