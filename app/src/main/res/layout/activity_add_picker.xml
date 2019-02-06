@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#73000000">
 
@@ -206,7 +207,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_top_border"
-                    android:orientation="horizontal">
+
+                    android:padding="2dp"
+                    android:timePickerMode="spinner"
+                    android:orientation="horizontal"
+                    />
 
                     <NumberPicker
                         android:id="@+id/add_picker_hour"
@@ -259,6 +264,7 @@
                     </RelativeLayout>
 
                 </LinearLayout>
+
 
             </LinearLayout>
 

@@ -31,6 +31,7 @@
     </RelativeLayout>
     
     <RelativeLayout
+        android:id="@+id/setting_profile_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="1dp"
@@ -56,6 +57,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/setting_theme_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="1dp"
@@ -96,7 +98,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="학번 및 비밀번호"
+            android:text="알람"
             android:textColor="#000000"
             android:textSize="16dp"
             android:layout_toRightOf="@+id/setting_alarm_img"
@@ -104,6 +106,7 @@
             android:layout_centerVertical="true"/>
         
         <Switch
+            android:id="@+id/setting_alarm_switch"
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:track="@drawable/switch_track_selector"
