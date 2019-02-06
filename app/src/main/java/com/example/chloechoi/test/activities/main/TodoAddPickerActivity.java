@@ -8,21 +8,24 @@ import android.widget.NumberPicker;
 
 import com.example.chloechoi.test.R;
 
+import java.util.Calendar;
+
 public class TodoAddPickerActivity extends AppCompatActivity {
 
+    // TODO finishActivity()
+    // TODO 종료 탭 활성화 !
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_picker);
 
-        //unfocusable text color 수정이 안돼....... 좀 더 찾아보고 안되는 거면 라이브러리 써야쥐......라이브러리는 많던뒈...흐아...
+        // TODO unselected text color 수정이 안돼....... 좀 더 찾아보고 안되는 거면 라이브러리 써야쥐......라이브러리는 많던뒈...흐아...
         NumberPicker npMonth = findViewById(R.id.add_picker_month);
         npMonth.setMinValue(1);
         npMonth.setMaxValue(12);
 //        int month = npMonth.getValue();
 
-        //if문으로 맥스 다르게 해줄 수는 있는데 뭔가 2월은 4년에 한 번 다른데
-        //이거를 어케 처리할 지 아마도 calendar 객체 이용하면 가능할 듯?
+        // TODO if문으로 맥스 다르게 해줄 수는 있는데 뭔가 2월은 4년에 한 번 다른데, 이거를 어케 처리할 지 아마도 calendar 객체 이용하면 가능할 듯?
         NumberPicker npDay = findViewById(R.id.add_picker_day);
         npDay.setMinValue(1);
         npDay.setMaxValue(31);
@@ -35,7 +38,26 @@ public class TodoAddPickerActivity extends AppCompatActivity {
         npMinute.setMinValue(0);
         npMinute.setMaxValue(59);
 
+        //isStart 임의 지정
+        clearPicker(npMonth,npDay,npHour,npMinute,0);
+    }
 
+    void clearPicker(NumberPicker npMonth, NumberPicker npDate, NumberPicker npHour, NumberPicker npMinute, int isStart){
+        Calendar cal = Calendar.getInstance();
+        int month = cal.get(Calendar.MONTH) + 1;
+        int date = cal.get(Calendar.DATE);
+
+        npMonth.setValue(month);
+        npDate.setValue(date);
+
+        if(isStart == 0){
+            npHour.setValue(0);
+            npMinute.setValue(0);
+        }
+        else{
+            npHour.setValue(23);
+            npHour.setValue(59);
+        }
     }
 
 }
