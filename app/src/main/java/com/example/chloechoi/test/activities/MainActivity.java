@@ -3,7 +3,6 @@ package com.example.chloechoi.test.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.list.adapter.HomeworkAdapter;
 import com.example.chloechoi.test.model.HomeworkData;

@@ -89,6 +89,7 @@
     
     
     <RelativeLayout
+        android:id="@+id/setting_profile_modify_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/layout_background_stroke"
