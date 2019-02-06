@@ -75,7 +75,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="14dp"/>
 
-        <EditText
+        <TextView
             android:id="@+id/setting_profile_modify_nowpassword"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
@@ -144,12 +144,16 @@
 
     </RelativeLayout>
 
+
     <RelativeLayout
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--//선영 todo 버튼 하단 고정-->
+
         <Button
+            android:id="@+id/setting_profile_modify_savebtn"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#F8901F"
