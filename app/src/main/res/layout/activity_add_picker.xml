@@ -82,11 +82,11 @@
                     android:layout_width="90dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-                    
+
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp" />
-                    
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -94,19 +94,77 @@
                         android:textSize="14dp"
                         android:textColor="@color/black"
                         android:layout_marginLeft="10dp"/>
-                    
+
                 </LinearLayout>
 
-                <DatePicker
+                <!--<DatePicker-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/picker_top_border"-->
+                <!--android:padding="2dp"-->
+                <!--android:datePickerMode="spinner"-->
+                <!--android:calendarViewShown="false"-->
+                <!--&gt;-->
+
+                <!--</DatePicker>-->
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_top_border"
-                    android:padding="2dp"
-                    android:datePickerMode="spinner"
-                    android:calendarViewShown="false"
-                    >
+                    android:orientation="horizontal">
 
-                </DatePicker>
+                    <NumberPicker
+                        android:id="@+id/add_picker_month"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:theme="@style/AppTheme.Picker">
+
+                    </NumberPicker>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="월"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                    <NumberPicker
+                        android:id="@+id/add_picker_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:theme="@style/AppTheme.Picker">
+
+                    </NumberPicker>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="일"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -136,15 +194,71 @@
 
                 </LinearLayout>
 
-                <TimePicker
+                <!--<TimePicker-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/picker_top_border"-->
+                <!--android:padding="2dp"-->
+                <!--android:timePickerMode="spinner"-->
+                <!--&gt;</TimePicker>-->
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_top_border"
-                    android:padding="2dp"
-                    android:timePickerMode="spinner"
-                    >
+                    android:orientation="horizontal">
 
-                </>
+                    <NumberPicker
+                        android:id="@+id/add_picker_hour"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:theme="@style/AppTheme.Picker">
+
+                    </NumberPicker>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="시"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                    <NumberPicker
+                        android:id="@+id/add_picker_minute"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="2dp"
+                        android:layout_weight="1"
+                        android:theme="@style/AppTheme.Picker">
+
+                    </NumberPicker>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="분"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:layout_centerInParent="true"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 

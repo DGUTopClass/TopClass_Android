@@ -8,4 +8,11 @@ public class Constants {
     static public String TYPE_PASSWORD = "비밀번호를 입력해주세요.";
 
     static public String NO_SUCH_STUDENT = "정확한 학번 및 비밀번호를 입력해주세요.";
+
+    // todolist add
+    static public String DEFAULT_START_TIME = "00:00";
+    static public String DEFAULT_END_TIME = "23:59";
+
+    static public int TYPE_START = 0;
+    static public int TYPE_END = 1;
 }

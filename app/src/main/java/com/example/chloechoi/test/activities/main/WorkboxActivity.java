@@ -22,6 +22,4 @@ public class WorkboxActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-//    void addFragment
-
 }
