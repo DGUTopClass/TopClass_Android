@@ -28,14 +28,15 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginRight="45dp">
 
             <View
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/todo_border_bottom"></View>
             <Spinner
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"></Spinner>
 
         </RelativeLayout>
@@ -64,10 +65,11 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginRight="45dp">
 
             <EditText
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/todo_border_bottom"/>
 
@@ -96,10 +98,11 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="150dp"
+            android:layout_marginRight="45dp">
 
             <EditText
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/todo_border"
                 android:hint="과제 설명 입력"
