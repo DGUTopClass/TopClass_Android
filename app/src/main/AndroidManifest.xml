@@ -20,9 +20,14 @@
         </activity>
 
 
+
         <activity android:name=".activities.main.fragment.SettingProfileFragment"/>
         <activity android:name=".activities.main.fragment.SettingProfileModifyFragment"/>
         <activity android:name=".activities.main.fragment.SettingThemeFragment"/>
+
+        <!--<activity android:name=".activities.main.WorkboxActivity"></activity>-->
+        <activity android:name=".activities.main.TodoAddPickerActivity"/>
+        <activity android:name=".activities.SignInActivity"/>
 
     </application>
 

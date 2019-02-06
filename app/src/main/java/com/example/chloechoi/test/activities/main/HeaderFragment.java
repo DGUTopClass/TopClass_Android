@@ -10,6 +10,7 @@ import com.example.chloechoi.test.R;
 
 public class HeaderFragment extends Fragment {
 
+    // 각 이벤트에 따라서 붙여줄 헤더를 지정해주는 변수
     public int header_num;
 
     @Override
@@ -17,7 +18,7 @@ public class HeaderFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         // test용 임의 지정
-        header_num = 1;
+        header_num = 3;
 
         switch (header_num){
             case 1:
