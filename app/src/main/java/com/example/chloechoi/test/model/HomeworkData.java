@@ -26,8 +26,8 @@ public class HomeworkData {
 
     public HomeworkData getToBeSummitedDummy(){
         HomeworkData h = new HomeworkData();
-        h.title = "주기율표";
-        h.subject = "화학개론";
+        h.title = " 과제 01";
+        h.subject = "데이터통신입문";
         h.deadline="12/29 17:00";
 
         return h;
