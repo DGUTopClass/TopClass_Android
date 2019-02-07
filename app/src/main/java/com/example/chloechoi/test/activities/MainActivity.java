@@ -1,28 +1,33 @@
 package com.example.chloechoi.test.activities;
 
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.main.fragment.HomeworkListFragment;
-import com.example.chloechoi.test.list.adapter.HomeworkAdapter;
-import com.example.chloechoi.test.model.HomeworkData;
-import com.example.chloechoi.test.utility.Constants;
 
-import java.util.ArrayList;
+import com.example.chloechoi.test.R;
+import com.example.chloechoi.test.activities.main.HeaderFragment;
+import com.example.chloechoi.test.list.adapter.PagerAdapter;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    HomeworkListFragment hwListFragement;
 
+    private ViewPager mViewPager;
+    private PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        hwListFragement = new HomeworkListFragment();
-
-        getSupportFragmentManager().beginTransaction().add(R.id.fl_main_content, hwListFragement).commit();
+        mViewPager = (ViewPager) findViewById(R.id.vp_main_page);
+        mPagerAdapter = new PagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(mPagerAdapter);
+        mViewPager.setCurrentItem(0);
 
     }
+
+
+
 }
