@@ -1,12 +1,15 @@
 package com.example.chloechoi.test.activities.main;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -14,10 +17,11 @@ import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.activities.main.fragment.TodoAddFragment;
 import com.example.chloechoi.test.utility.Constants;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class TodoAddPickerActivity extends AppCompatActivity implements View.OnClickListener {
+public class TodoAddPickerActivity extends AppCompatActivity implements View.OnClickListener, NumberPicker.OnValueChangeListener {
 
 
     // TODO
@@ -61,10 +65,12 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
         // initialize number picker
         npMonth.setMinValue(1);
         npMonth.setMaxValue(12);
+        ((EditText)npMonth.getChildAt(0)).setTextColor(getResources().getColor(R.color.mainColor));
 
         Calendar cal = Calendar.getInstance();
         npDay.setMinValue(1);
         npDay.setMaxValue(cal.getActualMaximum(Calendar.DATE));
+        ((EditText)npDay.getChildAt(0)).setTextColor(getResources().getColor(R.color.mainColor));
 
         npHour.setFormatter(new NumberPicker.Formatter() {
             @Override
@@ -74,6 +80,7 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
         });
         npHour.setMinValue(0);
         npHour.setMaxValue(23);
+        ((EditText)npHour.getChildAt(0)).setTextColor(getResources().getColor(R.color.mainColor));
 
         npMinute.setFormatter(new NumberPicker.Formatter() {
             @Override
@@ -83,6 +90,7 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
         });
         npMinute.setMinValue(0);
         npMinute.setMaxValue(59);
+        ((EditText)npMinute.getChildAt(0)).setTextColor(getResources().getColor(R.color.mainColor));
 
         isStartFirst = getIntent().getIntExtra("isStart", 3);
         if(isStartFirst == 3){
@@ -109,6 +117,17 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
         endText.setOnClickListener(this);
         cancelBtn.setOnClickListener(this);
         doneBtn.setOnClickListener(this);
+        // setOnValueChangedListener
+        npMonth.setOnValueChangedListener(this);
+        npDay.setOnValueChangedListener(this);
+        npHour.setOnValueChangedListener(this);
+        npMinute.setOnValueChangedListener(this);
+    }
+
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        ((EditText)picker.getChildAt(0)).setTextColor(getResources().getColor(R.color.white));
+        picker.invalidate();
     }
 
     @Override
@@ -224,5 +243,4 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
             dateEnd.add(3,String.valueOf(minute));
         }
     }
-
 }
