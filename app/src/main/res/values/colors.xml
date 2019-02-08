@@ -13,6 +13,8 @@
     <color name="black">#000000</color>
     <color name="gray">#707070</color>
 
+    <color name="backgroundColor">#F8F8F8</color>
+
     <color name="hw_priority_1">#E15E39</color>
     <color name="hw_priority_2">#EB9332</color>
     <color name="hw_priority_3">#EDC219</color>

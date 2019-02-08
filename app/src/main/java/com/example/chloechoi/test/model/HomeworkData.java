@@ -4,7 +4,7 @@ public class HomeworkData {
     public String title;
     public String subject;
     public Boolean isHanded;
-    public double score; // TODO 이거 string 으로 바꿔야함!!!!
+    public double score;
     public String feedback;
 
     public String deadline;
@@ -26,8 +26,8 @@ public class HomeworkData {
 
     public HomeworkData getToBeSummitedDummy(){
         HomeworkData h = new HomeworkData();
-        h.title = "주기율표";
-        h.subject = "화학개론";
+        h.title = " 과제 01";
+        h.subject = "데이터통신입문";
         h.deadline="12/29 17:00";
 
         return h;
