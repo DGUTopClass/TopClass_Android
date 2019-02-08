@@ -47,6 +47,8 @@ public class TodoAddPickerActivity extends AppCompatActivity {
         // 취소 누르면 finishActivity 할 때 값 안 넘겨줌
         // 확인 누르면 finishActivity 할 때 값 넘겨줌
 
+        //git push from local/master to origin/dev_goun testing
+
         //isStart 임의 지정
         clearPicker(npMonth,npDay,npHour,npMinute,0);
     }
