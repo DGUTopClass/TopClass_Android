@@ -61,5 +61,4 @@ public class TodoAddPickerActivity extends AppCompatActivity {
             npHour.setValue(59);
         }
     }
-
 }
