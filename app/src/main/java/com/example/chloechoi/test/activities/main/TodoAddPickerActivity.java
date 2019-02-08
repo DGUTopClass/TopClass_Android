@@ -14,12 +14,13 @@ import java.util.Calendar;
 public class TodoAddPickerActivity extends AppCompatActivity {
 
     // TODO finishActivity()
-    // TODO 시작 종료 프래그먼트 분리 -> ViewPager 적용 시킬 것
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_picker);
 
+
+        // initialize number picker
         // TODO unselected text color 수정이 안돼....... 좀 더 찾아보고 안되는 거면 라이브러리 써야쥐......라이브러리는 많던뒈...흐아...
         NumberPicker npMonth = findViewById(R.id.add_picker_month);
         npMonth.setMinValue(1);
@@ -38,6 +39,13 @@ public class TodoAddPickerActivity extends AppCompatActivity {
         NumberPicker npMinute = findViewById(R.id.add_picker_minute);
         npMinute.setMinValue(0);
         npMinute.setMaxValue(59);
+
+
+        // TODO LIST
+        // 시작 및 종료 시간 받아오기
+        // 받아온 값으로 clear picker 수정 -> 여기에다가 탭 정보도 넣기
+        // 취소 누르면 finishActivity 할 때 값 안 넘겨줌
+        // 확인 누르면 finishActivity 할 때 값 넘겨줌
 
         //isStart 임의 지정
         clearPicker(npMonth,npDay,npHour,npMinute,0);

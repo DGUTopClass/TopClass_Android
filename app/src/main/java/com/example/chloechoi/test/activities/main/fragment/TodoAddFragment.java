@@ -77,13 +77,9 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
         startActivity(intent);
     }
 
-
-    void setDefaultDate(){
-        Calendar cal = Calendar.getInstance();
-        int month = cal.get(Calendar.MONTH) + 1;
-        int date = cal.get(Calendar.DATE);
+    String translateToKro(int dayNum){
         String dayKor = "";
-        switch (cal.get(Calendar.DAY_OF_WEEK)){
+        switch (dayNum){
             case 1:
                 dayKor = "일";
                 break;
@@ -106,9 +102,17 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
                 dayKor = "토";
                 break;
         }
-        startDate.setText(month + "월 " + date + "일");
+        return dayKor;
+    }
+
+    void setDefaultDate(){
+        Calendar cal = Calendar.getInstance();
+        int month = cal.get(Calendar.MONTH) + 1;
+        int date = cal.get(Calendar.DATE);
+        String dayKor = translateToKro(cal.get(Calendar.DAY_OF_WEEK));
+        startDate.setText(month + "월 " + date + "일" + " (" + dayKor + ")");
         startTime.setText(Constants.DEFAULT_START_TIME);
-        endDate.setText(month + "월 " + date + "일");
+        endDate.setText(month + "월 " + date + "일" + " (" + dayKor + ")");
         endTime.setText(Constants.DEFAULT_END_TIME);
     }
 
@@ -124,13 +128,20 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
         return dates;
     }
 
+    String getDayOfWeek(int year, int month, int day){
+        Calendar cal = Calendar.getInstance();
+        cal.set(year,month,day);
+        return translateToKro(cal.get(Calendar.DAY_OF_WEEK));
+    }
 
     // 매개변수 arr로 할까?
     // data format : mm dd hh mm (int 두자리로)
     void setDate(int monthS, int dayS, int hourS, int minuteS, int monthE, int dayE, int hourE, int minuteE){
-        startDate.setText(monthS + "월 " + dayS + "일");
+        Calendar cal = Calendar.getInstance();
+
+        startDate.setText(monthS + "월 " + dayS + "일" + " (" + getDayOfWeek(cal.get(Calendar.YEAR),monthS,dayS) +")");
         startTime.setText(hourS + ":" + minuteS);
-        endDate.setText(monthE + "월 " + dayE + "일");
+        endDate.setText(monthE + "월 " + dayE + "일" + " (" + getDayOfWeek(cal.get(Calendar.YEAR),monthE,dayE) +")");
         endTime.setText(hourE + ":" + minuteE);
     }
 
