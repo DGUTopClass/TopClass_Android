@@ -13,6 +13,11 @@ public class Constants {
     static public String DEFAULT_START_TIME = "00:00";
     static public String DEFAULT_END_TIME = "23:59";
 
-    static public int TYPE_START = 0;
-    static public int TYPE_END = 1;
+    static public final int TYPE_START = 0;
+    static public final int TYPE_END = 1;
+
+    // startActivityForResult
+    static public final int REQUEST_CODE = 0;
+    static public final int RESULT_CODE = 1;
+    static public final int DATA_ERROR_CODE = -1;
 }
