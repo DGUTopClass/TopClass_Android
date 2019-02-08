@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.chloechoi.test.R;
 
 
 
-public class SettingFragment extends Fragment implements View.OnClickListener {
+public class SettingFragment extends Fragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     Button backbtn;
 
@@ -50,7 +52,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
         themelayout.setOnClickListener(this);
 
         alarmswitch.findViewById(R.id.setting_alarm_switch);
-        alarmswitch.setOnClickListener(this);
+        alarmswitch.setOnCheckedChangeListener(this);
 
     }
 
@@ -60,10 +62,18 @@ public class SettingFragment extends Fragment implements View.OnClickListener {
             startActivity(profileIntent);
         }else if(v==themelayout){
             startActivity(themeIntent);
-        }else if(v==alarmswitch){
-            //선영 todo -> 알람 on off
         }
-
     }
 
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked == true){
+            //alarm on
+            Toast.makeText(this.getContext(),"alarm on",Toast.LENGTH_SHORT).show();
+
+        }else if(isChecked == false){
+            //alarm off
+            Toast.makeText(this.getContext(),"alarm off",Toast.LENGTH_SHORT).show();
+        }
+    }
 }
