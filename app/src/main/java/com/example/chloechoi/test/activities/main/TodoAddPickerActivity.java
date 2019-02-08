@@ -13,7 +13,11 @@ import java.util.Calendar;
 
 public class TodoAddPickerActivity extends AppCompatActivity {
 
-    // TODO finishActivity()
+    // TODO
+    // numberpicker unfocusing text color change
+    // this activity background color change
+    // time numberpicker format change (0 -> 00)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +25,9 @@ public class TodoAddPickerActivity extends AppCompatActivity {
 
 
         // initialize number picker
-        // TODO unselected text color 수정이 안돼....... 좀 더 찾아보고 안되는 거면 라이브러리 써야쥐......라이브러리는 많던뒈...흐아...
         NumberPicker npMonth = findViewById(R.id.add_picker_month);
         npMonth.setMinValue(1);
         npMonth.setMaxValue(12);
-//        int month = npMonth.getValue();
 
         Calendar cal = Calendar.getInstance();
         NumberPicker npDay = findViewById(R.id.add_picker_day);
@@ -47,8 +49,6 @@ public class TodoAddPickerActivity extends AppCompatActivity {
         // 취소 누르면 finishActivity 할 때 값 안 넘겨줌
         // 확인 누르면 finishActivity 할 때 값 넘겨줌
 
-        //git push from local/master to origin/dev_goun testing
-        ////////////
 
         //isStart 임의 지정
         clearPicker(npMonth,npDay,npHour,npMinute,0);
