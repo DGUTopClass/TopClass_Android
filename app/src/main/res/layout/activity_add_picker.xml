@@ -25,12 +25,13 @@
                 android:layout_weight="1">
 
                 <View
-                    android:id="@+id/add_background_start"
+                    android:id="@+id/add_start_background"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_under_border"></View>
 
                 <TextView
+                    android:id="@+id/add_start_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="시작"
@@ -46,13 +47,14 @@
                 android:layout_weight="1">
 
                 <View
-                    android:id="@+id/add_background_end"
+                    android:id="@+id/add_end_background"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/picker_under_border"
                     android:visibility="invisible"></View>
 
                 <TextView
+                    android:id="@+id/add_end_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="종료"
@@ -280,14 +282,15 @@
                 android:layout_centerVertical="true"/>
 
             <TextView
+                android:id="@+id/add_picker_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="취소"
-                android:textSize="14dp"
-                android:textColor="@color/mainColor"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="24dp"
                 android:layout_toLeftOf="@+id/add_picker_done"
-                android:layout_centerVertical="true"/>
+                android:text="취소"
+                android:textColor="@color/mainColor"
+                android:textSize="14dp" />
         </RelativeLayout>
 
     </LinearLayout>
