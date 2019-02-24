@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fy_detail_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/ry_detail_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다학제캡스톤디자인"
+                android:textColor="@color/mainColor"
+                android:textSize="14sp"
+                />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="다학제 캡스톤 디자인 Homework #1"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:id="@+id/iv_calendar"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:background="@color/black"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2018/12/19 ~ 2018/12/21"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+
+            <com.example.chloechoi.test.utility.ExpendableTextView
+                android:id="@+id/tv_contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9월 4일 화요일 수업시간에 시청했던 OT영상에서 사용한 자료를 첨부합니다. 학생들은 9월 11일 화요일까지 Team-Up 및 팀별 주제에 대한 PPT발표를 준비해오시기 바랍니다. (팀이 정해지지 않은 인원들은 개인별로 PPT를 준비해주시기"
+                android:textColor="@color/gray"
+                android:textSize="12sp"
+                android:maxLines="4"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
