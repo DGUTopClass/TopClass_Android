@@ -42,7 +42,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         mViewHolder.tvDate.setText(datalist.get(i).date);
         mViewHolder.tvContents.setText(datalist.get(i).contents);
 
-        mViewHolder.btnArrow.setOnClickListener(
+        mViewHolder.rlGroup.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
