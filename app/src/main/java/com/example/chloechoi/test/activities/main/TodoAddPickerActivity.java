@@ -25,8 +25,7 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
 
 
     // TODO
-    // numberpicker unfocusing text color change
-    // this activity background color change
+    // numberpicker unfocusing text color change -> 왜 안되는 지 모루겟어....
 
     TextView startText;
     TextView endText;
@@ -126,7 +125,7 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-        ((EditText)picker.getChildAt(0)).setTextColor(getResources().getColor(R.color.white));
+        ((EditText)picker.getChildAt(0)).setTextColor(getResources().getColor(R.color.mainColor));
         picker.invalidate();
     }
 
@@ -154,6 +153,30 @@ public class TodoAddPickerActivity extends AppCompatActivity implements View.OnC
                 else if(isStartFirst == Constants.TYPE_END){
                     storeChangedStartDate(Constants.TYPE_END);
                 }
+
+                // TODO !!!!
+                // 시간이 이상해진다......첨부터 다시 해보자....
+//                Log.e("check",dateStart.get(0));
+//                Log.e("check1",dateStart.get(1));
+//                Log.e("check2",dateStart.get(2));
+//                Log.e("check3",dateStart.get(3));
+//                // 시작이 종료보다 이후일 경우 예외처리
+//                // dateStart.add(1, String.valueOf(Integer.parseInt(dateEnd.get(1)) - 1)); 하루 전으로 설정하는 코드
+//                if(Integer.parseInt(dateStart.get(0)) > Integer.parseInt(dateEnd.get(0))){
+//                    dateStart.add(0, dateEnd.get(0));
+//                    dateStart.add(1, dateEnd.get(1));
+//                    dateStart.add(2,String.valueOf(npHour.getValue()));
+//                    dateStart.add(3,String.valueOf(npMinute.getValue()));
+//                }
+//                else if(Integer.parseInt(dateStart.get(0)) == Integer.parseInt(dateEnd.get(0)) && Integer.parseInt(dateStart.get(1)) > Integer.parseInt(dateEnd.get(1))){
+//                    dateStart.add(1, dateEnd.get(1));
+//                    dateStart.add(2,String.valueOf(npHour.getValue()));
+//                    dateStart.add(3,String.valueOf(npMinute.getValue()));
+//                }
+//                Log.e("check",dateStart.get(0));
+//                Log.e("check1",dateStart.get(1));
+//                Log.e("check2",dateStart.get(2));
+//                Log.e("check3",dateStart.get(3));
                 intent.putExtra("startDate",dateStart);
                 intent.putExtra("endDate",dateEnd);
                 setResult(Constants.RESULT_CODE, intent);

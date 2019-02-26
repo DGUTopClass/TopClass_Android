@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.main.WorkboxActivity"/>
-
-        <activity android:name=".activities.main.TestSettingActivity">
+        <activity android:name=".activities.HWDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,9 +17,10 @@
             </intent-filter>
         </activity>
         <!--<activity android:name=".activities.main.WorkboxActivity"></activity>-->
-        <activity android:name=".activities.main.TodoAddPickerActivity"></activity>
+        <activity android:name=".activities.main.TodoAddPickerActivity" android:theme="@style/Transparent"></activity>
         <activity android:name=".activities.SignInActivity"></activity>
         <!--<activity android:name=".activities.MainActivity"></activity>-->
+        <activity android:name=".activities.TestSettingActivity_sy"></activity>
     </application>
 
 </manifest>

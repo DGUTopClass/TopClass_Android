@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.chloechoi.test.R;
@@ -17,6 +18,9 @@ public class NoticeViewHolder extends RecyclerView.ViewHolder {
     public TextView tvContents;
 
     public LinearLayout lyContentsBox;
+    public RelativeLayout rlGroup;
+
+
 
     public NoticeViewHolder(View itemView){
         super(itemView);
@@ -28,6 +32,7 @@ public class NoticeViewHolder extends RecyclerView.ViewHolder {
         tvContents = (TextView) itemView.findViewById(R.id.tv_contents);
 
         lyContentsBox = (LinearLayout) itemView.findViewById(R.id.ly_contents_box);
+        rlGroup = (RelativeLayout) itemView.findViewById(R.id.rl_group);
 
     }
 
