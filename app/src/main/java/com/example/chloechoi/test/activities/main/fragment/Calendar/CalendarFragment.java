@@ -1,4 +1,4 @@
-package com.example.chloechoi.test.activities.main.fragment;
+package com.example.chloechoi.test.activities.main.fragment.Calendar;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
