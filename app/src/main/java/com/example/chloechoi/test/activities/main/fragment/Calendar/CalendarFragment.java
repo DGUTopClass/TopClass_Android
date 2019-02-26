@@ -49,7 +49,7 @@ public class CalendarFragment extends Fragment implements OnItemClick {
         rawData.add(new RawSchedule("abc", "11주차 보고", "2019-02-04", "12:00", "2019-02-07", "17:00"));
 
         convertData(curYearFormat, curMonthFormat);
-        
+        makeWeekData();
 
     }
 
@@ -99,6 +99,14 @@ public class CalendarFragment extends Fragment implements OnItemClick {
         }
 
         return -1;
+    }
+
+    void makeWeekData(){
+        for(int i=0; i<processedData.size()-1; i++){
+            if(i%7 == 0) processedWeekData.add(new Week());
+
+            processedWeekData.get(processedWeekData.size()-1).setDay(processedData.get(i));
+        }
     }
 
     @Override

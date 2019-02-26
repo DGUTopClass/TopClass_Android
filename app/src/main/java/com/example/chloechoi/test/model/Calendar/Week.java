@@ -8,4 +8,8 @@ public class Week {
     public Week(){
         this.days = new ArrayList<Day>();
     }
+
+    public void setDay(Day day){
+        this.days.add(day);
+    }
 }
