@@ -48,6 +48,8 @@ public class CalendarFragment extends Fragment implements OnItemClick {
         rawData.add(new RawSchedule("def", "화학 보고서 작성", "2019-02-11", "12:00", "2019-02-14", "17:00"));
         rawData.add(new RawSchedule("abc", "11주차 보고", "2019-02-04", "12:00", "2019-02-07", "17:00"));
 
+        convertData(curYearFormat, curMonthFormat);
+        
 
     }
 
@@ -59,7 +61,7 @@ public class CalendarFragment extends Fragment implements OnItemClick {
 
         tvMonth.setText(Integer.toString(month)+"월");
 
-        // makeDayList
+        makeDayList(mCal, year, month);
 
         for(RawSchedule rawSchedule : rawData){
             String[] splitedStartDate = rawSchedule.getStartDate().split("-");
@@ -78,6 +80,14 @@ public class CalendarFragment extends Fragment implements OnItemClick {
 
     void makeDayList(Calendar mCal, int year, int month){
         // TODO
+        mCal.set(year, month, 1);
+
+        int dayNum = mCal.get(Calendar.DAY_OF_WEEK);
+        for(int i=1; i<dayNum; i++) processedData.add(new Day(-1));
+
+        mCal.set(Calendar.MONTH, month-1);
+        for(int i=0; i<mCal.getActualMaximum(Calendar.DAY_OF_MONTH); i++)
+            processedData.add(new Day(i+1));
     }
 
     int findStartDateIdx(int date){
