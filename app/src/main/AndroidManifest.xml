@@ -20,7 +20,6 @@
         <activity android:name=".activities.main.TodoAddPickerActivity" android:theme="@style/Transparent"></activity>
         <activity android:name=".activities.SignInActivity"></activity>
         <!--<activity android:name=".activities.MainActivity"></activity>-->
-        <activity android:name=".activities.TestSettingActivity_sy"></activity>
     </application>
 
 </manifest>
