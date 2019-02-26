@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,31 +22,36 @@ public class SettingProfileFragment extends Fragment implements View.OnClickList
 
     RelativeLayout modifyprofilebtn;
 
-    Intent tomodifyInent = new Intent(this.getContext(), SettingProfileModifyFragment.class);
+    FragmentManager fm;
+    FragmentTransaction fragmentTransaction;
+
+
+    //Intent tomodifyInent = new Intent(this.getContext(), SettingProfileModifyFragment.class);
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        initialUI();
+        View view = inflater.inflate(R.layout.fragment_setting_profile, container, false);
 
-        return inflater.inflate(R.layout.fragment_setting_profile, container, false);
+        fm = getFragmentManager();
+        fragmentTransaction = fm.beginTransaction();
 
-    }
 
-    void initialUI(){
-        studentnumtxt.findViewById(R.id.setting_profile_studentnum);
-        passwordtxt.findViewById(R.id.setting_profile_passwordnum);
-
-        modifyprofilebtn.findViewById(R.id.setting_profile_modify_btn);
+        studentnumtxt = view.findViewById(R.id.setting_profile_studentnum);
+        passwordtxt = view.findViewById(R.id.setting_profile_passwordnum);
+        modifyprofilebtn = view.findViewById(R.id.setting_profile_modify_btn);
         modifyprofilebtn.setOnClickListener(this);
+
+        return view;
     }
+
 
     @Override
     public void onClick(View v) {
 
         if(v == modifyprofilebtn){
-            startActivity(tomodifyInent);
+            //startActivity(tomodifyInent);
         }
 
     }
