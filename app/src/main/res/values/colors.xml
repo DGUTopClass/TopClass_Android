@@ -19,4 +19,12 @@
     <color name="hw_priority_2">#EB9332</color>
     <color name="hw_priority_3">#EDC219</color>
 
+    <color name="sunday">#FF0000</color>
+    <color name="saturday">#3300FF</color>
+
+    <color name="tempTable1">#FF8585</color>
+    <color name="tempTable2">#C6C6C6</color>
+    <color name="tempTable3">#FFEE77</color>
+    <color name="tempTable4">#89F290</color>
+
 </resources>

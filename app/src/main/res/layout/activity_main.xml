@@ -1,18 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="@color/backgroundColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <include layout="@layout/header_main"/>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_main_page"
+    <FrameLayout
+        android:id="@+id/main_header"
         android:layout_width="match_parent"
-        android:layout_height="495dp"
-        >
+        android:layout_height="50dp">
 
-    </android.support.v4.view.ViewPager>
+    </FrameLayout>
 
-</LinearLayout>
+    <FrameLayout
+        android:id="@+id/main_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/main_header">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_main_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/circle_indicator_layout">
+
+        </android.support.v4.view.ViewPager>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/circle_indicator_layout"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            >
+
+            <com.pm10.library.CircleIndicator
+                android:id="@+id/circle_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:p_gap="20dp"
+                app:p_radius="6dp"
+                app:p_strokeWidth="2dp"
+                app:p_defaultColor="@color/white"
+                app:p_selectedColor="@color/mainColor"
+                app:p_strokeColor="@color/mainColor"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

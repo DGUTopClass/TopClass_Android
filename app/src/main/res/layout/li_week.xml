@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp">
+    <TableRow>
+        <include android:id="@+id/li_day0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+        <include android:id="@+id/li_day6"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/li_day"/>
+    </TableRow>
+</TableLayout>

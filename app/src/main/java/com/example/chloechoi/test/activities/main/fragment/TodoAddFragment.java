@@ -3,6 +3,7 @@ package com.example.chloechoi.test.activities.main.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class TodoAddFragment extends Fragment implements View.OnClickListener{
 
@@ -50,9 +52,6 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
         setDefaultDate();
 
 
-        // TODO finishActivity()로 돌아왔을 때 설정된 값으로 다시 설정해줘야 하는데 어케 하징
-//        setDate();
-
 
         // setOnClickListener
         startArea.setOnClickListener(this);
@@ -61,20 +60,58 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+
+
+        // get result data
+        ArrayList<String> resultStartDate = new ArrayList<>();
+        ArrayList<String> resultEndDate = new ArrayList<>();
+        if(data != null){
+            if (requestCode == Constants.REQUEST_CODE && resultCode == Constants.RESULT_CODE ){
+                resultStartDate = data.getStringArrayListExtra("startDate");
+                resultEndDate = data.getStringArrayListExtra("endDate");
+            }
+            else {
+                // request code or result code is wrong
+            }
+            // set data on text view
+            if(resultStartDate.get(2).length() == 1){
+                resultStartDate.add(2,"0" + resultStartDate.get(2));
+            }
+            if(resultStartDate.get(3).length() == 1){
+                resultStartDate.add(3,"0" + resultStartDate.get(3));
+            }
+            if(resultEndDate.get(2).length() == 1){
+                resultEndDate.add(2,"0" + resultEndDate.get(2));
+            }
+            if(resultEndDate.get(3).length() == 1){
+                resultEndDate.add(3,"0" + resultEndDate.get(3));
+            }
+            setDate(Integer.parseInt(resultStartDate.get(0)),Integer.parseInt(resultStartDate.get(1)),resultStartDate.get(2),resultStartDate.get(3),
+                    Integer.parseInt(resultEndDate.get(0)),Integer.parseInt(resultEndDate.get(1)),resultEndDate.get(2),resultEndDate.get(3));
+        }
+        else {
+            // data is null
+        }
+    }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.add_start){
-            intent = new Intent(getActivity(),TodoAddPickerActivity.class);
-            intent.putExtra("isStart",Constants.TYPE_START);
-            intent.putExtra("dates",getDate());
+        switch (v.getId()){
+            case R.id.add_start :
+                intent = new Intent(getActivity(),TodoAddPickerActivity.class);
+                intent.putExtra("isStart",Constants.TYPE_START);
+                intent.putExtra("datas",getData());
+                break;
+            case R.id.add_end:
+                intent = new Intent(getActivity(),TodoAddPickerActivity.class);
+                intent.putExtra("isStart",Constants.TYPE_END);
+                intent.putExtra("datas",getData());
+                break;
         }
-        else if(v.getId() == R.id.add_end){
-            intent = new Intent(getActivity(),TodoAddPickerActivity.class);
-            intent.putExtra("isStart",Constants.TYPE_END);
-            intent.putExtra("dates",getDate());
-        }
-        startActivity(intent);
+        startActivityForResult(intent,Constants.REQUEST_CODE);
     }
 
     String translateToKro(int dayNum){
@@ -118,7 +155,7 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
 
 
     // index 순서 : 시작날짜 시작시간 종료날짜 종료시간
-    ArrayList<String> getDate(){
+    ArrayList<String> getData(){
         ArrayList<String> dates = new ArrayList<>();
         dates.add(startDate.getText().toString());
         dates.add(startTime.getText().toString());
@@ -136,7 +173,7 @@ public class TodoAddFragment extends Fragment implements View.OnClickListener{
 
     // 매개변수 arr로 할까?
     // data format : mm dd hh mm (int 두자리로)
-    void setDate(int monthS, int dayS, int hourS, int minuteS, int monthE, int dayE, int hourE, int minuteE){
+    void setDate(int monthS, int dayS, String hourS, String minuteS, int monthE, int dayE, String hourE, String minuteE){
         Calendar cal = Calendar.getInstance();
 
         startDate.setText(monthS + "월 " + dayS + "일" + " (" + getDayOfWeek(cal.get(Calendar.YEAR),monthS,dayS) +")");

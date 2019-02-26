@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_group"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Button
+            android:id="@+id/btn_arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/tv_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:text="소프트웨어공학개론"
+            android:textColor="@color/mainColor"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="50dp"
+            android:text="StarUML 튜토리얼"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="14dp"
+            android:text="12/05"
+            android:textColor="#929292"
+            android:textSize="10sp"
+            />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ly_contents_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <com.example.chloechoi.test.utility.CharacterWrapTextView
+            android:id="@+id/tv_contents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="StarUML 튜토리얼은 강의 계획서에 5주차(10/2)에 링크되어 있습니다. 앞으로 모든 과제와 플립러닝의 강의실 활동에서는 이 도구를 사용하겠습니다. 다운 받아 설치하고 수업시간에도 사용할 수 있게 준비하여 오세요."
+            android:textColor="@color/black"
+            android:textSize="11dp"
+            android:lineSpacingExtra="5dp"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
