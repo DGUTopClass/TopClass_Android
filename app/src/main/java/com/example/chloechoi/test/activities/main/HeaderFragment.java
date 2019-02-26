@@ -20,7 +20,7 @@ public class HeaderFragment extends Fragment {
 
 
         // test용 임의 지정
-        header_num = 3;
+        header_num = 2;
 
         switch (header_num){
             case 1:
