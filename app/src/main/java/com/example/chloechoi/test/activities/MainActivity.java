@@ -10,7 +10,6 @@ import android.widget.Adapter;
 import android.widget.FrameLayout;
 
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.main.HeaderFragment;
 import com.example.chloechoi.test.list.adapter.PagerAdapter;
 //import com.pm10.library.CircleIndicator;
 

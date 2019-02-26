@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.list.viewholder.NoticeViewHolder;
-import com.example.chloechoi.test.model.NoticeData;
+import com.example.chloechoi.test.model.Notice;
 import com.example.chloechoi.test.utility.Constants;
 
 import java.util.ArrayList;
@@ -18,11 +18,11 @@ import static android.view.View.GONE;
 
 public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ArrayList<NoticeData> datalist;
+    private ArrayList<Notice> datalist;
 
     Context mContext;
 
-    public NoticeAdapter(ArrayList<NoticeData> itemList){
+    public NoticeAdapter(ArrayList<Notice> itemList){
         datalist = itemList;
     }
 
@@ -37,10 +37,10 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int i){
         final NoticeViewHolder mViewHolder = (NoticeViewHolder) holder;
 
-        mViewHolder.tvSubject.setText(datalist.get(i).subject);
-        mViewHolder.tvTitle.setText(datalist.get(i).title);
-        mViewHolder.tvDate.setText(datalist.get(i).date);
-        mViewHolder.tvContents.setText(datalist.get(i).contents);
+        mViewHolder.tvSubject.setText(datalist.get(i).getDate());
+        mViewHolder.tvTitle.setText(datalist.get(i).getSubject());
+        mViewHolder.tvDate.setText(datalist.get(i).getDate());
+        mViewHolder.tvContents.setText(datalist.get(i).getContents());
 
         mViewHolder.rlGroup.setOnClickListener(
                 new View.OnClickListener(){

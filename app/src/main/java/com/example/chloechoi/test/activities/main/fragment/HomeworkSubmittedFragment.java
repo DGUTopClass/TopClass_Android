@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.list.adapter.HomeworkAdapter;
-import com.example.chloechoi.test.model.HomeworkData;
+import com.example.chloechoi.test.model.Homework;
 import com.example.chloechoi.test.utility.Constants;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class HomeworkSubmittedFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private HomeworkAdapter mAdapter;
-    private ArrayList<HomeworkData> item = new ArrayList<HomeworkData>();
+    private ArrayList<Homework> item = new ArrayList<Homework>();
 
     public HomeworkSubmittedFragment(){
 
@@ -47,7 +47,7 @@ public class HomeworkSubmittedFragment extends Fragment {
             item.clear();
 
         for (int i = 0; i < 5; i++) {
-            item.add(new HomeworkData().getSummitedDummy());
+            item.add(new Homework().getSummitedDummy());
         }
     }
 }

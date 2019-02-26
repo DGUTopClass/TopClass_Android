@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.list.adapter.NoticeAdapter;
-import com.example.chloechoi.test.model.NoticeData;
+import com.example.chloechoi.test.model.Notice;
 
 import java.util.ArrayList;
 
@@ -23,9 +23,9 @@ public class NoticeActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.rv_notice_body);
         mRecyclerView.setHasFixedSize(true);
 
-        ArrayList<NoticeData> dataList = new ArrayList<>();
+        ArrayList<Notice> dataList = new ArrayList<>();
         for(int i = 0; i <3; i++){
-            dataList.add(new NoticeData().getDummy());
+            dataList.add(new Notice().getDummy());
         }
 
         NoticeAdapter mNoticeAdapter = new NoticeAdapter(dataList);
