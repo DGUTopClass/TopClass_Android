@@ -37,8 +37,8 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int i){
         final NoticeViewHolder mViewHolder = (NoticeViewHolder) holder;
 
-        mViewHolder.tvSubject.setText(datalist.get(i).getDate());
-        mViewHolder.tvTitle.setText(datalist.get(i).getSubject());
+        mViewHolder.tvSubject.setText(datalist.get(i).getSubject());
+        mViewHolder.tvTitle.setText(datalist.get(i).getTitle());
         mViewHolder.tvDate.setText(datalist.get(i).getDate());
         mViewHolder.tvContents.setText(datalist.get(i).getContents());
 
@@ -46,14 +46,15 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
-                        if(mViewHolder.lyContentsBox.getVisibility() == GONE){
-                            mViewHolder.lyContentsBox.setVisibility(View.VISIBLE);
-                            mViewHolder.btnArrow.setBackgroundColor(mContext.getResources().getColor(R.color.btnSelected));
-                        }
-                        else{
-                            mViewHolder.lyContentsBox.setVisibility(View.GONE);
-                            mViewHolder.btnArrow.setBackgroundColor(mContext.getResources().getColor(R.color.btnDefault));
-                        }
+                        openContent(mViewHolder);
+                    }
+                });
+
+        mViewHolder.btnArrow.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        openContent(mViewHolder);
                     }
                 });
 
@@ -63,4 +64,17 @@ public class NoticeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     public int getItemCount(){
         return datalist.size();
     }
+
+    public void openContent(NoticeViewHolder mViewHolder){
+
+        if(mViewHolder.lyContentsBox.getVisibility() == GONE){
+            mViewHolder.lyContentsBox.setVisibility(View.VISIBLE);
+            mViewHolder.btnArrow.setBackground(mContext.getResources().getDrawable(R.drawable.notice_down_arrow_btn));
+        }
+        else{
+            mViewHolder.lyContentsBox.setVisibility(View.GONE);
+            mViewHolder.btnArrow.setBackground(mContext.getResources().getDrawable(R.drawable.notice_right_arrow_btn));
+        }
+    }
+
 }

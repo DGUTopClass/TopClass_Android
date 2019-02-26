@@ -17,7 +17,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="11dp"
-            android:layout_marginTop="15dp" />
+            android:layout_marginTop="15dp"
+            android:background="@drawable/notice_right_arrow_btn"/>
 
         <TextView
             android:id="@+id/tv_subject"

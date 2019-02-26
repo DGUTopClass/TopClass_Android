@@ -20,7 +20,9 @@ import com.example.chloechoi.test.utility.Constants;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static android.view.View.GONE;
 
@@ -57,11 +59,7 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if(type == constants.TYPE_TO_BE_SUMMITED_HW){
             ToBeSummitedHWViewHolder castedHolder = (ToBeSummitedHWViewHolder) holder;
 
-            castedHolder.vPriority.setBackgroundColor(setPriority("2019-02-27"));
-            // castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2));
-            /* TODO 시연아^^ 이거^^ 서버에서 받으면 deadline이라는 날짜를 나타내는 string이 넘어와^^
-            * 이걸 잘 잘라서 오늘 날짜(받아오는 함수 있음^~^)랑 비교해서 color 바꿔주면돼*^^* */
-
+            castedHolder.vPriority.setBackgroundColor(setPriority(dataList.get(i).getDeadline()));
             castedHolder.tvTitle.setText(dataList.get(i).getTitle());
             castedHolder.tvSubject.setText(dataList.get(i).getSubject());
             castedHolder.tvDeadLine.setText(dataList.get(i).getDeadline());
@@ -101,10 +99,11 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public int setPriority(String date) {
 
         int priorityColor = 0;
-        String today = Long.toString(System.currentTimeMillis());
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String today = format.format(Calendar.getInstance().getTime());
 
         try {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
             Date todayDate = format.parse(today);
             Date hwDate = format.parse(date);
@@ -121,8 +120,6 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             } else {
                 priorityColor = mContext.getResources().getColor(R.color.hw_priority_3);
             }
-
-
 
         } catch (ParseException e){
             priorityColor = mContext.getResources().getColor(R.color.black);

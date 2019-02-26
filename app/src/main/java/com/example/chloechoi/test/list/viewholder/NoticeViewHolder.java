@@ -20,7 +20,7 @@ public class NoticeViewHolder extends RecyclerView.ViewHolder {
     public LinearLayout lyContentsBox;
     public RelativeLayout rlGroup;
 
-
+    public TextView tvNoticeTitle;
 
     public NoticeViewHolder(View itemView){
         super(itemView);
@@ -33,6 +33,7 @@ public class NoticeViewHolder extends RecyclerView.ViewHolder {
 
         lyContentsBox = (LinearLayout) itemView.findViewById(R.id.ly_contents_box);
         rlGroup = (RelativeLayout) itemView.findViewById(R.id.rl_group);
+
 
     }
 

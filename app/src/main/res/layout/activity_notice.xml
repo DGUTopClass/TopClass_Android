@@ -6,9 +6,14 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/fy_notice_header"
         android:layout_width="match_parent"
         android:layout_height="50dp">
+
+        <include
+            android:id="@+id/notice_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            layout="@layout/header_setting_notice"/>
 
     </FrameLayout>
 
