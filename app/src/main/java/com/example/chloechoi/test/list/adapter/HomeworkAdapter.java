@@ -5,30 +5,34 @@ import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
 import com.example.chloechoi.test.list.viewholder.ToBeSummitedHWViewHolder;
-import com.example.chloechoi.test.model.HomeworkData;
+import com.example.chloechoi.test.model.Homework;
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.list.viewholder.SummitedHWViewHolder;
 import com.example.chloechoi.test.utility.Constants;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static android.view.View.GONE;
 
 public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<HomeworkData> dataList;
+    private ArrayList<Homework> dataList;
     Context mContext;
     Constants constants = new Constants();
 
     int[] layouts = {R.layout.li_to_be_summited_hw, R.layout.li_summited_hw};
 
     int type;
-    public HomeworkAdapter(ArrayList<HomeworkData> itemList, int type) {
+    public HomeworkAdapter(ArrayList<Homework> itemList, int type) {
         dataList = itemList;
         this.type = type;
     }
@@ -53,20 +57,21 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if(type == constants.TYPE_TO_BE_SUMMITED_HW){
             ToBeSummitedHWViewHolder castedHolder = (ToBeSummitedHWViewHolder) holder;
 
-            castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2));
-            /*TODO 시연아^^ 이거^^ 서버에서 받으면 deadline이라는 날짜를 나타내는 string이 넘어와^^
+            castedHolder.vPriority.setBackgroundColor(setPriority("2019-02-27"));
+            // castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2));
+            /* TODO 시연아^^ 이거^^ 서버에서 받으면 deadline이라는 날짜를 나타내는 string이 넘어와^^
             * 이걸 잘 잘라서 오늘 날짜(받아오는 함수 있음^~^)랑 비교해서 color 바꿔주면돼*^^* */
 
-            castedHolder.tvTitle.setText(dataList.get(i).title);
-            castedHolder.tvSubject.setText(dataList.get(i).subject);
-            castedHolder.tvDeadLine.setText(dataList.get(i).deadline);
+            castedHolder.tvTitle.setText(dataList.get(i).getTitle());
+            castedHolder.tvSubject.setText(dataList.get(i).getSubject());
+            castedHolder.tvDeadLine.setText(dataList.get(i).getDeadline());
         }
         else{
             final SummitedHWViewHolder castedHolder = (SummitedHWViewHolder) holder;
 
-            castedHolder.tvTitle.setText(dataList.get(i).title);
-            castedHolder.tvSubject.setText(dataList.get(i).subject);
-            if(dataList.get(i).isHanded) castedHolder.tvIsSummited.setVisibility(View.INVISIBLE);
+            castedHolder.tvTitle.setText(dataList.get(i).getTitle());
+            castedHolder.tvSubject.setText(dataList.get(i).getSubject());
+            if(dataList.get(i).getHanded()) castedHolder.tvIsSummited.setVisibility(View.INVISIBLE);
             castedHolder.btnScore.setText(dataList.get(i).toTvScore());
 
             castedHolder.btnScore.setOnClickListener(
@@ -85,11 +90,45 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
             );
 
-            castedHolder.tvFeedback.setText(dataList.get(i).feedback);
+            castedHolder.tvFeedback.setText(dataList.get(i).getFeedback());
         }
 
     }
 
     @Override
     public int getItemCount() {return dataList.size();}
+
+    public int setPriority(String date) {
+
+        int priorityColor = 0;
+        String today = Long.toString(System.currentTimeMillis());
+
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
+            Date todayDate = format.parse(today);
+            Date hwDate = format.parse(date);
+
+            long calDate = todayDate.getTime() - hwDate.getTime();
+            long calDateDays = calDate / (24*60*60*1000);
+
+            calDateDays = Math.abs(calDateDays);
+
+            if(calDateDays >= 0 && calDateDays <3.0){
+                priorityColor = mContext.getResources().getColor(R.color.hw_priority_1);
+            } else if(calDateDays >= 3.0 && calDateDays < 6.0){
+                priorityColor = mContext.getResources().getColor(R.color.hw_priority_2);
+            } else {
+                priorityColor = mContext.getResources().getColor(R.color.hw_priority_3);
+            }
+
+
+
+        } catch (ParseException e){
+            priorityColor = mContext.getResources().getColor(R.color.black);
+            Log.e("exception","parse exception at setPriority()");
+        }
+
+        return priorityColor;
+    }
 }

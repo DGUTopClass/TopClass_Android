@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.activities.MainActivity;
 import com.example.chloechoi.test.list.adapter.HomeworkAdapter;
-import com.example.chloechoi.test.model.HomeworkData;
+import com.example.chloechoi.test.model.Homework;
 import com.example.chloechoi.test.utility.Constants;
 
 import java.util.ArrayList;

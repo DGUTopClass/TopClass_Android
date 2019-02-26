@@ -10,8 +10,8 @@ import android.widget.Adapter;
 import android.widget.FrameLayout;
 
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.main.HeaderFragment;
 import com.example.chloechoi.test.list.adapter.PagerAdapter;
+import com.pm10.library.CircleIndicator;
 //import com.pm10.library.CircleIndicator;
 
 import java.util.ArrayList;
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setCurrentItem(0);
 
-        //CircleIndicator circleIndicator = (CircleIndicator) findViewById(R.id.circle_indicator);
-        //circleIndicator.setupWithViewPager(mViewPager);
+        CircleIndicator circleIndicator = (CircleIndicator) findViewById(R.id.circle_indicator);
+        circleIndicator.setupWithViewPager(mViewPager);
 
     }
 }

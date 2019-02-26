@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.main.HeaderFragment;
 import com.example.chloechoi.test.activities.main.fragment.TodoAddFragment;
 
 
