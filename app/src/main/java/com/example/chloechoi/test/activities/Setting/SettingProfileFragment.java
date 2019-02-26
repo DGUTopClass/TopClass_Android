@@ -1,4 +1,4 @@
-package com.example.chloechoi.test.activities.main.fragment;
+package com.example.chloechoi.test.activities.Setting;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.main.HeaderFragment;
 
 public class SettingProfileFragment extends Fragment implements View.OnClickListener {
 
@@ -52,7 +51,7 @@ public class SettingProfileFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
 
         if(v == modifyprofilebtn){
-            fragmentTransaction.replace(R.id.main_header, new HeaderFragment());
+            //fragmentTransaction.replace(R.id.main_header, new HeaderFragment());
             fragmentTransaction.replace(R.id.main_body, new SettingProfileModifyFragment());
             fragmentTransaction.commit();
         }
