@@ -10,4 +10,10 @@ public class Day {
         this.day = day;
         schedules = new ArrayList<Schedule>();
     }
+
+    public void setSchedule(Schedule schedule){
+        this.schedules.add(schedule);
+    }
+
+    public int getDay() {return this.day;}
 }

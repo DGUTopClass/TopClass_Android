@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.chloechoi.test.activities.main.fragment.CalendarFragment;
+import com.example.chloechoi.test.activities.main.fragment.Calendar.CalendarFragment;
 import com.example.chloechoi.test.activities.main.fragment.HomeworkListFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {

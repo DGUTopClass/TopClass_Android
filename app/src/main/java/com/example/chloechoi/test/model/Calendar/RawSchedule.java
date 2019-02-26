@@ -8,7 +8,22 @@ public class RawSchedule {
     private String finishDate;
     private String finishTime;
 
-    public RawSchedule(){
-
+    public RawSchedule(String id, String title, String startDate, String startTime,
+                       String finishDate, String finishTime){
+        this.id = id;
+        this.title = title;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.finishDate = finishDate;
+        this.finishTime = finishTime;
     }
+
+//    public void getDummyData(){
+//
+//    }
+
+    public String getId() { return this.id; }
+    public String getTitle() { return this.title; }
+    public String getStartDate(){ return this.startDate; }
+    public String getFinishDate(){ return this.finishDate; }
 }
