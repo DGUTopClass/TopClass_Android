@@ -1,4 +1,4 @@
-package com.example.chloechoi.test.activities.main.fragment;
+package com.example.chloechoi.test.activities.Setting;
 
 import android.content.Intent;
 import android.os.Bundle;
