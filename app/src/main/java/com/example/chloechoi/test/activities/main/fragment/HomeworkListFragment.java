@@ -50,11 +50,9 @@ public class HomeworkListFragment extends Fragment {
 
                 if(position == 0){
                     selected = toBeSubmittedFragement;
-                    System.out.println("------------------------------------------position: " + position);
                 } else if(position == 1){
                     selected = submittedFragment;
-                    System.out.println("-------------------------------------------position: "+ position);
-                }
+                  }
 
                 getFragmentManager().beginTransaction().replace(R.id.rl_list_content, selected).commit();
 

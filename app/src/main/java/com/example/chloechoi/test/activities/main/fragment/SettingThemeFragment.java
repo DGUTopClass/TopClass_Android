@@ -17,12 +17,9 @@ public class SettingThemeFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        initialUI();
+        View view = inflater.inflate(R.layout.fragment_setting_theme, container, false);
 
-        return inflater.inflate(R.layout.fragment_setting_theme, container, false);
-    }
 
-    void initialUI(){
-
+        return view;
     }
 }
