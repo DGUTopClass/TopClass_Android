@@ -26,12 +26,11 @@ public class SettingActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setContentView(R.layout.fragment_setting);
+        setContentView(R.layout.activity_setting);
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        //fragmentTransaction.add(R.id.main_header, new HeaderFragment());
-        //fragmentTransaction.add(R.id.main_body, new TodoAddFragment());
+        
         fragmentTransaction.commit();
 
         super.onCreate(savedInstanceState);
