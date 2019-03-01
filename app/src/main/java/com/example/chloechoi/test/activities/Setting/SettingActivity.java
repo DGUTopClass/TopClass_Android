@@ -15,6 +15,7 @@ import com.example.chloechoi.test.R;
 public class SettingActivity extends AppCompatActivity {
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -22,10 +23,9 @@ public class SettingActivity extends AppCompatActivity {
 
         SettingHeaderFragment headerfragment = new SettingHeaderFragment();
         SettingFragment bodyfragment = new SettingFragment();
-        SettingThemeFragment themefragment = new SettingThemeFragment();
 
         fragmentTransaction.add(R.id.setting_header, headerfragment);
-        fragmentTransaction.add(R.id.setting_body, themefragment);
+        fragmentTransaction.add(R.id.setting_body, bodyfragment);
 
         fragmentTransaction.commit();
 
@@ -40,7 +40,7 @@ public class SettingActivity extends AppCompatActivity {
 
         Log.v("~~~","log check 6"); */
 
-        super.onCreate(savedInstanceState);
+
     }
 
     public static boolean isSafeFragment( Fragment frag )

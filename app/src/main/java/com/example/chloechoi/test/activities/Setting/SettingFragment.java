@@ -24,18 +24,8 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
 
     Switch alarmswitch;
 
-    Intent profileIntent;
-    Intent themeIntent;
-
-
-
-/*
-        fragmentTransaction.add(R.id.setting_header, new SettingHeaderFragment());
-        fragmentTransaction.add(R.id.setting_body, new SettingFragment());
-
-        fragmentTransaction.commit();
-
-*/
+    FragmentManager fm;
+    FragmentTransaction fragmentTransaction;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -44,26 +34,18 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
 
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        FragmentManager fm = getFragmentManager();
 
-        if( fm == null){
-            Log.v("~~~~", "if fragment manager null??");
-        }
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-
-        Log.v("~~~~", "check in settingfragment");
+        fm = getFragmentManager();
 
         profilelayout = view.findViewById(R.id.setting_profile_layout);
-        profilelayout.setOnClickListener(this);
+        //profilelayout.setOnClickListener(this);
 
         themelayout = view.findViewById(R.id.setting_theme_layout);
-        themelayout.setOnClickListener(this);
+        themelayout.setOnClickListener((View.OnClickListener) getActivity());
 
         alarmswitch = view.findViewById(R.id.setting_alarm_switch);
         alarmswitch.setOnCheckedChangeListener(this);
 
-        profileIntent = new Intent(this.getActivity(), SettingProfileFragment.class);
-        themeIntent = new Intent(this.getActivity(), SettingThemeFragment.class);
 
 
         return view;
@@ -76,7 +58,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
 
     @Override
     public void onClick(View v) {
-/*
+        fragmentTransaction = fm.beginTransaction();
 
         if(v == profilelayout){  //학번 및 비밀번호 수정 시  -> SettiingProfileFragment 로 교체
             fragmentTransaction.replace(R.id.main_header, new SettingHeaderFragment());
@@ -84,11 +66,9 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
             fragmentTransaction.commit();
 
         }else if(v==themelayout){  //테마 수정 시 -> SettingThemeFragment 로 교체
-            fragmentTransaction.replace(R.id.main_header, new SettingHeaderFragment());
             fragmentTransaction.replace(R.id.main_body, new SettingThemeFragment());
             fragmentTransaction.commit();
         }
-*/
 
     }
 
