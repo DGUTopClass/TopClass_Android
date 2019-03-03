@@ -7,14 +7,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <FrameLayout
-        android:id="@+id/main_header"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:id="@+id/main_header"
+        android:layout_height="50dp"
+        android:elevation="2dp"
+        android:background="@color/white">
 
         <include
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        layout="@layout/header_main"/>
+        layout="@layout/header_main" />
 
     </FrameLayout>
 

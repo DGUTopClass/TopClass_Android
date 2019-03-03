@@ -15,11 +15,14 @@ public class ToBeSummitedHWViewHolder extends RecyclerView.ViewHolder {
     public TextView tvSubject;
     public TextView tvDeadLine;
 
+    public LinearLayout lyToDoGroup;
+
     public ToBeSummitedHWViewHolder(View itemView) {
         super(itemView);
         vPriority = (View) itemView.findViewById(R.id.v_priority);
         tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
         tvSubject = (TextView) itemView.findViewById(R.id.tv_subject);
         tvDeadLine = (TextView) itemView.findViewById(R.id.tv_deadline);
+        lyToDoGroup = (LinearLayout) itemView.findViewById(R.id.ly_to_do_hw_group);
     }
 }

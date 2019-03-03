@@ -1,6 +1,7 @@
 package com.example.chloechoi.test.list.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -10,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.chloechoi.test.activities.HWDetailActivity;
+import com.example.chloechoi.test.activities.MainActivity;
 import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
 import com.example.chloechoi.test.list.viewholder.ToBeSummitedHWViewHolder;
 import com.example.chloechoi.test.model.Homework;
@@ -59,10 +62,19 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         if(type == constants.TYPE_TO_BE_SUMMITED_HW){
             ToBeSummitedHWViewHolder castedHolder = (ToBeSummitedHWViewHolder) holder;
 
-            castedHolder.vPriority.setBackgroundColor(setPriority(dataList.get(i).getDeadline()));
+            castedHolder.vPriority.setBackgroundColor(setPriority(dataList.get(i).getFinishDate()));
             castedHolder.tvTitle.setText(dataList.get(i).getTitle());
             castedHolder.tvSubject.setText(dataList.get(i).getSubject());
-            castedHolder.tvDeadLine.setText(dataList.get(i).getDeadline());
+            castedHolder.tvDeadLine.setText(dataList.get(i).toShowFinishDate(type));
+            castedHolder.lyToDoGroup.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(v.getContext(), HWDetailActivity.class);
+                            mContext.startActivity(intent);
+                        }
+                    }
+            );
         }
         else{
             final SummitedHWViewHolder castedHolder = (SummitedHWViewHolder) holder;

@@ -2,18 +2,28 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <FrameLayout
         android:id="@+id/fy_detail_header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:visibility="visible"></FrameLayout>
+        android:elevation="2dp"
+        android:background="@color/white">
+
+        <include
+            layout="@layout/header_setting_notice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/ry_detail_body"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fy_detail_header">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +34,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_subject"
+                android:id="@+id/tv_detail_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="다학제캡스톤디자인"
@@ -32,7 +42,7 @@
                 android:textSize="14sp"
                 />
             <TextView
-                android:id="@+id/tv_title"
+                android:id="@+id/tv_detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="다학제 캡스톤 디자인 Homework #1"
@@ -50,16 +60,15 @@
                     android:id="@+id/iv_calendar"
                     android:layout_width="17dp"
                     android:layout_height="17dp"
-                    android:background="@color/black"
                     android:layout_gravity="center_vertical"/>
 
                 <TextView
-                    android:id="@+id/tv_date"
+                    android:id="@+id/tv_detail_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2018/12/19 ~ 2018/12/21"
                     android:textColor="@color/black"
-                    android:textSize="15dp"
+                    android:textSize="15sp"
                     android:layout_marginLeft="5dp"/>
 
             </LinearLayout>
@@ -83,7 +92,6 @@
                             android:layout_height="wrap_content"
                             android:lineSpacingExtra="3dp"
                             android:maxLines="4"
-                            android:text="9월 4일 화요일 수업시간에 시청했던 OT영상에서 사용한 자료를 첨부합니다. 학생들은 9월 11일 화요일까지 Team-Up 및 팀별 주제에 대한 PPT발표를 준비해오시기 바랍니다. (팀이 정해지지 않은 인원들은 개인별로 PPT를 준비해주시기 바라며 제한시간은 똑같이 유지됩니다.) 빈칸채우기 중입니다. 방해 9월 4일 화요일 수업시간에 시청했던 OT영상에서 사용한 Homework자료를 첨부합니다. 학생들은 9월 11일 화요일까지 Team-Up 및 팀별 주제에 대한 PPT발표를 준비해오시기 바랍니다.(팀이 정해지지 않은 인원들은 개인별로 PPT를 준비해주시기 바라며 제한시간은 똑같이 유지됩니다.)"
                             android:textColor="@color/gray"
                             android:textSize="12sp" />
                     </RelativeLayout>
@@ -99,7 +107,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:lineSpacingExtra="3dp"
-                            android:text="9월 4일 화요일 수업시간에 시청했던 OT영상에서 사용한 자료를 첨부합니다. 학생들은 9월 11일 화요일까지 Team-Up 및 팀별 주제에 대한 PPT발표를 준비해오시기 바랍니다. (팀이 정해지지 않은 인원들은 개인별로 PPT를 준비해주시기 바라며 제한시간은 똑같이 유지됩니다.) 빈칸채우기 중입니다. 방해 9월 4일 화요일 수업시간에 시청했던 OT영상에서 사용한 Homework자료를 첨부합니다. 학생들은 9월 11일 화요일까지 Team-Up 및 팀별 주제에 대한 PPT발표를 준비해오시기 바랍니다.(팀이 정해지지 않은 인원들은 개인별로 PPT를 준비해주시기 바라며 제한시간은 똑같이 유지됩니다.)"
                             android:textColor="@color/gray"
                             android:textSize="12sp" />
 
@@ -165,7 +172,7 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:background="@color/black" />
+                    android:src="@drawable/homework_detail_alarm_btn" />
 
                 <TextView
                     android:layout_width="wrap_content"

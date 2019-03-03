@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class NoticeActivity extends AppCompatActivity {
 
     RecyclerView mRecyclerView;
-    RecyclerView.LayoutManager mLayoutManager;
     TextView mNoticeHeader;
 
     @Override
