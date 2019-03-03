@@ -76,7 +76,8 @@
                 android:layout_height="25dp"
                 android:layout_marginTop="8dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="27dp"/>
+                android:layout_marginLeft="27dp"
+                android:background="@drawable/setting_theme_back_btn"/>
 
             <TextView
                 android:id="@+id/setting_theme_nowthemetxt"
@@ -95,102 +96,21 @@
                 android:layout_height="25dp"
                 android:layout_marginTop="8dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="27dp"/>
+                android:layout_marginRight="27dp"
+                android:background="@drawable/setting_theme_next_btn"/>
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="25dp"
-            android:layout_gravity="center_horizontal">
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#FF8585"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#FFB367"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#FFEE77"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#89F290"
-                >
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="290dp"
-            android:layout_height="50dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_gravity="center_horizontal">
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#9EAAFF"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#DC7CFF"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#FFAADB"
-                android:layout_marginRight="30dp"
-                >
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="#C6C6C6"
-                >
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
         
+        <android.support.v4.view.ViewPager
+            android:id="@+id/setting_theme_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+        </android.support.v4.view.ViewPager>
+
         <RelativeLayout
+            android:layout_marginTop="5dp"
             android:layout_width="290dp"
             android:layout_height="36dp"
             android:layout_gravity="center_horizontal"
