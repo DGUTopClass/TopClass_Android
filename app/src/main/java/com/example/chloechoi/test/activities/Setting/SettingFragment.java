@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import com.example.chloechoi.test.R;
 
 
 
-public class SettingFragment extends Fragment implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class SettingFragment extends Fragment implements  CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 
     RelativeLayout profilelayout;
     RelativeLayout themelayout;
@@ -30,45 +31,35 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
+        Log.v("~~~", "log check 1 ");
+
         // Inflate the layout for this fragment
+        View settingfragment = inflater.inflate(R.layout.fragment_setting, container, false);
+        /*View settingactivity = inflater.inflate(R.layout.activity_setting, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_setting, container, false);
-
+        fragment_body = settingactivity.findViewById(R.id.main_body);*/
 
         fm = getFragmentManager();
+        fragmentTransaction = fm.beginTransaction();
 
-        profilelayout = view.findViewById(R.id.setting_profile_layout);
-        //profilelayout.setOnClickListener(this);
+        profilelayout = settingfragment.findViewById(R.id.setting_profile_layout);
+        Log.v("~~~", "log check 2 ");
+        themelayout = settingfragment.findViewById(R.id.setting_theme_layout);
+        Log.v("~~~", "log check 3 ");
 
-        themelayout = view.findViewById(R.id.setting_theme_layout);
-        themelayout.setOnClickListener((View.OnClickListener) getActivity());
 
-        alarmswitch = view.findViewById(R.id.setting_alarm_switch);
+        //themelayout.setOnClickListener(LayoutClickListener);
+        themelayout.setOnClickListener(this);
+
+        Log.v("~~~", "log check 4 ");
+
+
+        alarmswitch = settingfragment.findViewById(R.id.setting_alarm_switch);
         alarmswitch.setOnCheckedChangeListener(this);
 
 
 
-        return view;
-
-    }
-
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public void onClick(View v) {
-        fragmentTransaction = fm.beginTransaction();
-
-        if(v == profilelayout){  //학번 및 비밀번호 수정 시  -> SettiingProfileFragment 로 교체
-            fragmentTransaction.replace(R.id.main_header, new SettingHeaderFragment());
-            fragmentTransaction.replace(R.id.main_body, new SettingProfileFragment());
-            fragmentTransaction.commit();
-
-        }else if(v==themelayout){  //테마 수정 시 -> SettingThemeFragment 로 교체
-            fragmentTransaction.replace(R.id.main_body, new SettingThemeFragment());
-            fragmentTransaction.commit();
-        }
+        return settingfragment;
 
     }
 
@@ -85,4 +76,31 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
             Toast.makeText(this.getContext(),"alarm off",Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public void onClick(View v) {
+
+        switch(v.getId()) {
+            case R.id.setting_theme_layout:
+                ((SettingActivity)getActivity()).changeHeaderTitle("테마");
+                ((SettingActivity)getActivity()).replaceBodyFragment(new SettingThemeFragment());
+                break;
+        }
+
+    }
+    /*
+    private RelativeLayout.OnClickListener LayoutClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.v("~~~", "log check 5 - onclicklistener ");
+
+            switch(v.getId()) {
+                case R.id.setting_theme_layout:
+                    fragmentTransaction.replace(R.id.main_body, new SettingThemeFragment());
+                    fragmentTransaction.commit();
+                    break;
+            }
+        }
+    };*/
+
 }

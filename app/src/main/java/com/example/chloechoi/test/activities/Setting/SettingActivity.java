@@ -14,37 +14,55 @@ import com.example.chloechoi.test.R;
 
 public class SettingActivity extends AppCompatActivity {
 
+    FragmentManager fm;
+    FragmentTransaction fragmentTransaction;
+
+    FragmentManager fm2;
+    FragmentTransaction fragmentTransaction2;
+
+    SettingHeaderFragment headerfragment = new SettingHeaderFragment();
+    SettingFragment bodyfragment = new SettingFragment();
+
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-
-        SettingHeaderFragment headerfragment = new SettingHeaderFragment();
-        SettingFragment bodyfragment = new SettingFragment();
+        fm = getSupportFragmentManager();
+        fragmentTransaction = fm.beginTransaction();
 
         fragmentTransaction.add(R.id.setting_header, headerfragment);
+
         fragmentTransaction.add(R.id.setting_body, bodyfragment);
+        fragmentTransaction.addToBackStack("basefragment");
 
         fragmentTransaction.commit();
 
-        /*
-        Log.v("~~~","start fragment check");
-        if(isSafeFragment(headerfragment)){
-            Log.v("~~~","header fragment destroyed check");
-        }
-        if(isSafeFragment(bodyfragment)){
-            Log.v("~~~","body fragment destroyed check");
-        }
 
-        Log.v("~~~","log check 6"); */
+    }
+
+    public void changeHeaderTitle (String newtitle){
+
+        Log.v("~~~","change header text");
+
+        headerfragment.headerTitle.setText(newtitle);
+    }
+
+    public void replaceBodyFragment(Fragment newfragment){
+
+/*        fm2 = getSupportFragmentManager();
+        fragmentTransaction2 = fm2.beginTransaction();*/
+
+        Log.v("~~~","replace body fragment");
+        Log.v("~~~", newfragment.toString());
+//        fragmentTransaction.add(R.id.setting_body, newfragment);
+
+        fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.setting_body, newfragment);
+        fragmentTransaction.commit();
+
 
 
     }
 
-    public static boolean isSafeFragment( Fragment frag )
-    {
-        return !(frag.isRemoving() || frag.getActivity() == null || frag.isDetached() || !frag.isAdded() || frag.getView() == null );
-    }
 }

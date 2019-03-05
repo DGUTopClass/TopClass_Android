@@ -4,7 +4,7 @@
     android:layout_height="50dp">
 
     <ImageView
-        android:id="@+id/iv_setting_back"
+        android:id="@+id/setting_back_btn"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_centerVertical="true"
@@ -12,14 +12,14 @@
         android:src="@drawable/header_back_btn"/>
 
     <TextView
-        android:id="@+id/tv_setting_title"
+        android:id="@+id/setting_header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설정"
+
         android:layout_centerVertical="true"
         android:textColor="@color/black"
         android:textSize="20dp"
-        android:layout_toRightOf="@+id/iv_setting_back"
+        android:layout_toRightOf="@+id/setting_back_btn"
         android:layout_marginLeft="21dp"
         />
 
