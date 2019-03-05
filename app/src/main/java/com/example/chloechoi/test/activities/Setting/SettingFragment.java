@@ -13,7 +13,6 @@ import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
-import android.widget.Toast;
 import com.example.chloechoi.test.R;
 
 
@@ -31,49 +30,34 @@ public class SettingFragment extends Fragment implements  CompoundButton.OnCheck
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
-        Log.v("~~~", "log check 1 ");
-
         // Inflate the layout for this fragment
         View settingfragment = inflater.inflate(R.layout.fragment_setting, container, false);
-        /*View settingactivity = inflater.inflate(R.layout.activity_setting, container, false);
-
-        fragment_body = settingactivity.findViewById(R.id.main_body);*/
 
         fm = getFragmentManager();
         fragmentTransaction = fm.beginTransaction();
 
         profilelayout = settingfragment.findViewById(R.id.setting_profile_layout);
-        Log.v("~~~", "log check 2 ");
+        profilelayout.setOnClickListener(this);
         themelayout = settingfragment.findViewById(R.id.setting_theme_layout);
-        Log.v("~~~", "log check 3 ");
-
-
-        //themelayout.setOnClickListener(LayoutClickListener);
         themelayout.setOnClickListener(this);
-
-        Log.v("~~~", "log check 4 ");
-
 
         alarmswitch = settingfragment.findViewById(R.id.setting_alarm_switch);
         alarmswitch.setOnCheckedChangeListener(this);
-
-
 
         return settingfragment;
 
     }
 
-
-    //--------------------알람 on off----------------------
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        //todo alarm on off 시 통신 필요
         if(isChecked == true){
             //alarm on
-            Toast.makeText(this.getContext(),"alarm on",Toast.LENGTH_SHORT).show();
+            Log.v("~~~", "alarm on");
 
         }else if(isChecked == false){
             //alarm off
-            Toast.makeText(this.getContext(),"alarm off",Toast.LENGTH_SHORT).show();
+            Log.v("~~~", "alarm off");
         }
     }
 
@@ -81,6 +65,10 @@ public class SettingFragment extends Fragment implements  CompoundButton.OnCheck
     public void onClick(View v) {
 
         switch(v.getId()) {
+            case R.id.setting_profile_layout:
+                ((SettingActivity)getActivity()).changeHeaderTitle("학번 및 비밀번호");
+                ((SettingActivity)getActivity()).replaceBodyFragment(new SettingProfileFragment());
+                break;
             case R.id.setting_theme_layout:
                 ((SettingActivity)getActivity()).changeHeaderTitle("테마");
                 ((SettingActivity)getActivity()).replaceBodyFragment(new SettingThemeFragment());
