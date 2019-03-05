@@ -24,27 +24,21 @@ public class SettingProfileModifyFragment extends Fragment implements View.OnCli
 
     Button saveprofileBtn;
 
-    Intent saveprofileIntent = new Intent(this.getContext(), SettingProfileFragment.class);
-
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        initialUI();
+        View view = inflater.inflate(R.layout.fragment_setting_profile_modify,container, false);
 
-        return inflater.inflate(R.layout.fragment_setting_profile_modify, container, false);
-    }
 
-    void initialUI(){
-        studentnum.findViewById(R.id.setting_profile_studentnum);
-        nowpassword.findViewById(R.id.setting_profile_modify_nowpassword);
-        newpassword.findViewById(R.id.setting_profile_modify_newpassword);
-        renewpassword.findViewById(R.id.setting_profile_modify_renewpassword);
-
-        saveprofileBtn.findViewById(R.id.setting_profile_modify_savebtn);
+        studentnum = view.findViewById(R.id.setting_profile_studentnum);
+        nowpassword = view.findViewById(R.id.setting_profile_modify_nowpassword);
+        newpassword = view.findViewById(R.id.setting_profile_modify_newpassword);
+        renewpassword = view.findViewById(R.id.setting_profile_modify_renewpassword);
+        saveprofileBtn = view.findViewById(R.id.setting_profile_modify_savebtn);
         saveprofileBtn.setOnClickListener(this);
 
+        return view;
     }
 
     @Override
@@ -53,10 +47,6 @@ public class SettingProfileModifyFragment extends Fragment implements View.OnCli
 
             if(newpassword.getText().toString() == renewpassword.getText().toString()){  //비번 and 비번확인이 일치 하는지 확인
 
-                saveprofileIntent.putExtra("studentnum", studentnum.getText().toString());
-                saveprofileIntent.putExtra("newpassword", newpassword.getText().toString());
-
-                startActivity(saveprofileIntent);
             }else{
                 //todo 비밀번호 확인 일치 하지 않을 때 어떤식으로 처리 할지?
             }

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,14 +28,17 @@ public class SettingThemeFragment extends Fragment{
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        Log.v("~~~","settingthemefragment oncreateview 들어와라~~");
+
         View view = inflater.inflate(R.layout.fragment_setting_theme, container, false);
+
 
         nowtheme = view.findViewById(R.id.setting_theme_nowthemetxt);
         themeviewpager = view.findViewById(R.id.setting_theme_viewpager);
 
-
-
         return view;
+
+
     }
 
     private class adapter extends FragmentPagerAdapter {                    //adapter클래스

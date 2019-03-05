@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
+           <!-- <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="#FFFFFF">
@@ -40,7 +40,7 @@
                     android:layout_marginLeft="21dp"/>
 
             </RelativeLayout>
-
+-->
 
             <RelativeLayout
                 android:layout_width="match_parent"

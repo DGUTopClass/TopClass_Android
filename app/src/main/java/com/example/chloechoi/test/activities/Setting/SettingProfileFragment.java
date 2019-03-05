@@ -51,9 +51,7 @@ public class SettingProfileFragment extends Fragment implements View.OnClickList
     public void onClick(View v) {
 
         if(v == modifyprofilebtn){
-            //fragmentTransaction.replace(R.id.main_header, new HeaderFragment());
-            fragmentTransaction.replace(R.id.main_body, new SettingProfileModifyFragment());
-            fragmentTransaction.commit();
+            ((SettingActivity)getActivity()).replaceBodyFragment(new SettingProfileModifyFragment());
         }
 
     }
