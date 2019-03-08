@@ -8,11 +8,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.example.chloechoi.test.R;
 
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity  {
 
     FragmentManager fm;
     FragmentTransaction fragmentTransaction;
@@ -50,12 +51,9 @@ public class SettingActivity extends AppCompatActivity {
 
     public void replaceBodyFragment(Fragment newfragment){
 
-/*        fm2 = getSupportFragmentManager();
-        fragmentTransaction2 = fm2.beginTransaction();*/
 
         Log.v("~~~","replace body fragment");
         Log.v("~~~", newfragment.toString());
-//        fragmentTransaction.add(R.id.setting_body, newfragment);
 
         fragmentTransaction = fm.beginTransaction();
         fragmentTransaction.replace(R.id.setting_body, newfragment);
@@ -64,5 +62,16 @@ public class SettingActivity extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+/*
+    @Override
+    public void onClick(View v) {
+        if(v == headerfragment.backBtn){
+            Log.v("~~~","액티비티에서 백버튼 처리");
+            onBackPressed();
+        }
+    }*/
 }
