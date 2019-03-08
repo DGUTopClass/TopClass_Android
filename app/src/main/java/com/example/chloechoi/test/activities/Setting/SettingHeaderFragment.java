@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.chloechoi.test.R;
 
-public class SettingHeaderFragment extends Fragment implements View.OnClickListenerou {
+public class SettingHeaderFragment extends Fragment implements View.OnClickListener {
 
     ImageView backBtn;
     TextView headerTitle;
