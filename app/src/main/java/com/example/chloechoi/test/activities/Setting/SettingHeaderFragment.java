@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.chloechoi.test.R;
 
-public class SettingHeaderFragment extends Fragment implements View.OnClickListener {
+public class SettingHeaderFragment extends Fragment implements View.OnClickListenerou {
 
     ImageView backBtn;
     TextView headerTitle;
@@ -36,10 +36,13 @@ public class SettingHeaderFragment extends Fragment implements View.OnClickListe
         super.onCreate(savedInstanceState);
     }
 
+
     @Override
     public void onClick(View v) {
         //todo 백버튼 구현
         if(v == backBtn){
+            Log.v("~~~","백버튼 클릭리스너");
+
 
         }
     }
