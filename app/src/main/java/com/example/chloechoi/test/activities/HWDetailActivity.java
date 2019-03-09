@@ -112,9 +112,8 @@ public class HWDetailActivity extends AppCompatActivity {
         tvContentCollpase.setText(homework.getContents());
         tvContentConcrete.setText(homework.getContents());
         if(homework.getMemo() != null) {
-
-            Log.v("hi","i'm in tvMemo.setText()");
             tvMemo.setText(homework.getMemo());
+            etMemo.setText(homework.getMemo());
         }
 
     }
@@ -143,7 +142,9 @@ public class HWDetailActivity extends AppCompatActivity {
 
         tvMemo.setVisibility(View.INVISIBLE);
         etMemo.setVisibility(View.VISIBLE);
-        
+
+        etMemo.setSelection(etMemo.getText().length());
+
         ivAttach.setVisibility(View.VISIBLE);
         tvSave.setVisibility(View.VISIBLE);
 

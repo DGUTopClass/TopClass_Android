@@ -142,7 +142,6 @@
                     android:id="@+id/et_memo"
                     android:layout_width="match_parent"
                     android:layout_height="217dp"
-                    android:hint="메모"
                     android:textSize="11dp"
                     android:textColor="#AFAFAF"
                     android:padding="10dp"
