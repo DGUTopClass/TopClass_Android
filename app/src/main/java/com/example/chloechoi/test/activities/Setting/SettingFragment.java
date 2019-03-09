@@ -17,7 +17,8 @@ import com.example.chloechoi.test.R;
 
 
 
-public class SettingFragment extends Fragment implements  CompoundButton.OnCheckedChangeListener, View.OnClickListener {
+public class SettingFragment extends Fragment
+        implements  CompoundButton.OnCheckedChangeListener, View.OnClickListener {
 
     RelativeLayout profilelayout;
     RelativeLayout themelayout;
