@@ -37,7 +37,6 @@
                 android:id="@+id/tv_detail_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="다학제캡스톤디자인"
                 android:textColor="@color/mainColor"
                 android:textSize="14sp"
                 />
@@ -45,7 +44,6 @@
                 android:id="@+id/tv_detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="다학제 캡스톤 디자인 Homework #1"
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -66,7 +64,6 @@
                     android:id="@+id/tv_detail_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2018/12/19 ~ 2018/12/21"
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:layout_marginLeft="5dp"/>
@@ -130,31 +127,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp">
 
-            <TextView
-                android:id="@+id/tv_memo"
-                android:layout_width="match_parent"
-                android:layout_height="217dp"
-                android:hint="메모"
-                android:textSize="11dp"
-                android:textColor="#AFAFAF"
-                android:padding="10dp"
-                android:gravity="left"
-                android:background="@drawable/hw_detail_memo_border"
-                android:visibility="visible"
-                />
+                <TextView
+                    android:id="@+id/tv_memo"
+                    android:layout_width="match_parent"
+                    android:layout_height="217dp"
+                    android:hint="메모"
+                    android:textSize="11dp"
+                    android:textColor="#AFAFAF"
+                    android:padding="10dp"
+                    android:gravity="left"
+                    android:background="@drawable/hw_detail_memo_border"/>
 
-
-            <EditText
-                android:id="@+id/et_memo"
-                android:layout_width="match_parent"
-                android:layout_height="217dp"
-                android:textSize="11dp"
-                android:textColor="#AFAFAF"
-                android:padding="10dp"
-                android:gravity="left"
-                android:background="@drawable/hw_detail_memo_border"
-                android:visibility="invisible"
-                />
+                <EditText
+                    android:id="@+id/et_memo"
+                    android:layout_width="match_parent"
+                    android:layout_height="217dp"
+                    android:hint="메모"
+                    android:textSize="11dp"
+                    android:textColor="#AFAFAF"
+                    android:padding="10dp"
+                    android:gravity="left"
+                    android:background="@drawable/hw_detail_memo_border"
+                    android:visibility="invisible"
+                    />
 
         </FrameLayout>
 

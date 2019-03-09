@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,7 +38,7 @@ public class HWDetailActivity extends AppCompatActivity {
     TextView tvSave;
 
 
-    Homework homework;
+    Homework homework = new Homework().getDetailDummy();
     Constants constants = new Constants();
 
     int contentsViewIndex = 0;
@@ -51,8 +52,6 @@ public class HWDetailActivity extends AppCompatActivity {
         Intent intent = new Intent(this.getIntent());
 
         initialUI();
-
-        setData();
 
         changeView();
     }
@@ -80,27 +79,43 @@ public class HWDetailActivity extends AppCompatActivity {
 
         tvMemo = (TextView)findViewById(R.id.tv_memo);
         etMemo = (EditText)findViewById(R.id.et_memo);
+        etMemo.requestFocus();
         tvMemo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                changeToEditText();
+                changeMemo();
             }
         });
 
         ivBack = (ImageView)findViewById(R.id.iv_back);
         ivBack.setImageResource(R.drawable.header_back_btn_with_color);
 
+        ivAttach = (ImageView)findViewById(R.id.iv_memo_attach);
+        ivAttach.setImageResource(R.drawable.homework_detail_attach_btn);
+        ivAttach.setVisibility(View.INVISIBLE);
+
+        tvSave = (TextView)findViewById(R.id.tv_save);
+        tvSave.setText("저장");
+        tvSave.setVisibility(View.INVISIBLE);
+
+        setData();
+
     }
 
-    public void setData(){
 
-        homework = new Homework().getDetailDummy();
+    // 지금은 이렇게 data를 불러오지만 통신할 때는 어떻게 불러와야 하지?
+    public void setData(){
 
         tvTitle.setText(homework.getTitle());
         tvSubject.setText(homework.getSubject());
         tvDate.setText(homework.toShowStartDate() + " ~ " +  homework.toShowFinishDate(constants.TYPE_HW_DETAIL));
         tvContentCollpase.setText(homework.getContents());
         tvContentConcrete.setText(homework.getContents());
+        if(homework.getMemo() != null) {
+
+            Log.v("hi","i'm in tvMemo.setText()");
+            tvMemo.setText(homework.getMemo());
+        }
 
     }
 
@@ -121,15 +136,38 @@ public class HWDetailActivity extends AppCompatActivity {
         }
     }
 
-    public void changeToEditText(){
-        etMemo.setVisibility(View.VISIBLE);
+    public void changeMemo(){
+
+        InputMethodManager imm1 = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm1.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+
         tvMemo.setVisibility(View.INVISIBLE);
+        etMemo.setVisibility(View.VISIBLE);
+        
+        ivAttach.setVisibility(View.VISIBLE);
+        tvSave.setVisibility(View.VISIBLE);
 
-        ivAttach = (ImageView)findViewById(R.id.iv_memo_attach);
-        ivAttach.setImageResource(R.drawable.homework_detail_attach_btn);
+        tvSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String memo = etMemo.getText().toString();
+                homework.setMemo(memo);
 
-        tvSave = (TextView)findViewById(R.id.tv_save);
-        tvSave.setText("저장");
+                InputMethodManager imm2 = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm2.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
+                tvMemo.setVisibility(View.VISIBLE);
+                etMemo.setVisibility(View.INVISIBLE);
+
+                ivAttach.setVisibility(View.INVISIBLE);
+                tvSave.setVisibility(View.INVISIBLE);
+
+                setData();
+            }
+        });
+    }
+
+    public void saveMemo(){
 
     }
 

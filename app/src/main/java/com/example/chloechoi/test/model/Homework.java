@@ -15,6 +15,7 @@ public class Homework {
     private String startDate;
     private String finishDate;
     private String contents;
+    private String memo;
 
     // 지난 과제
     private double score;
@@ -143,6 +144,7 @@ public class Homework {
     public String getFeedback() {
         return feedback;
     }
+    public String getMemo(){return memo; }
 
     public void setTitle(String title) {
         this.title = title;
@@ -170,5 +172,6 @@ public class Homework {
     public void setFeedback(String feedback) {
         this.feedback = feedback;
     }
+    public void setMemo(String memo){ this.memo = memo; }
 
 }
