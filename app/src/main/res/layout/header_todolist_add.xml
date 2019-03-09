@@ -4,15 +4,24 @@
     android:layout_height="50dp">
 
     <ImageView
+        android:id="@+id/iv_back"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"/>
-    
+
+    <ImageView
+        android:id="@+id/iv_memo_attach"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_save"
+        android:layout_marginRight="18dp" />
+
     <TextView
+        android:id="@+id/tv_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="저장"
         android:textSize="16dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"

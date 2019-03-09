@@ -32,13 +32,14 @@ public class HomeworkToBeSubmittedFragment extends Fragment {
 
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_to_be_summited_hw, container, false);
 
-        initDataset();
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_to_be_submmited_hw);
         mRecyclerView.setHasFixedSize(true);
 
         mAdapter = new HomeworkAdapter(item, Constants.TYPE_TO_BE_SUMMITED_HW);
         mRecyclerView.setAdapter(mAdapter);
+
+        initDataset();
 
         return rootView;
     }
@@ -49,6 +50,9 @@ public class HomeworkToBeSubmittedFragment extends Fragment {
 
         for (int i = 0; i < 4; i++) {
             item.add(new Homework().getToBeSummitedDummy());
+        }
+        for(int i = 0; i < 4; i++){
+            item.add(new Homework().getToBeSummitedDummy2());
         }
     }
 }

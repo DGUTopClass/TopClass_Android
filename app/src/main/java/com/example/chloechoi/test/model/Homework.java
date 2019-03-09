@@ -82,6 +82,16 @@ public class Homework {
         return h;
     }
 
+    public Homework getToBeSummitedDummy2(){
+        Homework h = new Homework();
+        h.title = "USECASE";
+        h.subject = "소프트웨어공학개론";
+
+        h.finishDate="2019-03-10 17:00:00";
+
+        return h;
+    }
+
 
     public Homework getSummitedDummy(){
         Homework h = new Homework();

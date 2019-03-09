@@ -17,9 +17,6 @@ import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.model.Homework;
 import com.example.chloechoi.test.utility.Constants;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 
 
 public class HWDetailActivity extends AppCompatActivity {
@@ -35,8 +32,9 @@ public class HWDetailActivity extends AppCompatActivity {
     TextView tvMemo;
     EditText etMemo;
 
-    TextView tvHeader;
     ImageView ivBack;
+    ImageView ivAttach;
+    TextView tvSave;
 
 
     Homework homework;
@@ -89,9 +87,7 @@ public class HWDetailActivity extends AppCompatActivity {
             }
         });
 
-        tvHeader = (TextView)findViewById(R.id.tv_setting_title);
-        tvHeader.setText("");
-        ivBack = (ImageView)findViewById(R.id.iv_setting_back);
+        ivBack = (ImageView)findViewById(R.id.iv_back);
         ivBack.setImageResource(R.drawable.header_back_btn_with_color);
 
     }
@@ -128,6 +124,13 @@ public class HWDetailActivity extends AppCompatActivity {
     public void changeToEditText(){
         etMemo.setVisibility(View.VISIBLE);
         tvMemo.setVisibility(View.INVISIBLE);
+
+        ivAttach = (ImageView)findViewById(R.id.iv_memo_attach);
+        ivAttach.setImageResource(R.drawable.homework_detail_attach_btn);
+
+        tvSave = (TextView)findViewById(R.id.tv_save);
+        tvSave.setText("저장");
+
     }
 
 

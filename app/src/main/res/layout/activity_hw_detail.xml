@@ -9,11 +9,11 @@
         android:id="@+id/fy_detail_header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:elevation="2dp"
+        android:elevation="1dp"
         android:background="@color/white">
 
         <include
-            layout="@layout/header_setting_notice"
+            layout="@layout/header_todolist_add"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -143,8 +143,7 @@
                 android:visibility="visible"
                 />
 
-                // 일단은 framelayout으로 처리했는데, header랑 같이 바뀌어야 해서,,
-                // 어떻게 해야할지 나중에 좀 더 생각해보기!
+
             <EditText
                 android:id="@+id/et_memo"
                 android:layout_width="match_parent"
@@ -158,8 +157,6 @@
                 />
 
         </FrameLayout>
-
-
 
 
             <LinearLayout
@@ -186,7 +183,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
 
     </RelativeLayout>
 

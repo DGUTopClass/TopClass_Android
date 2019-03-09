@@ -23,8 +23,8 @@ public class SettingHeaderFragment extends Fragment implements View.OnClickListe
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.header_setting_notice, container, false);
 
-        backBtn = view.findViewById(R.id.setting_back_btn);
-        headerTitle = view.findViewById(R.id.setting_header_title);
+        backBtn = view.findViewById(R.id.iv_setting_back);
+        headerTitle = view.findViewById(R.id.tv_setting_title);
         headerTitle.setText("설정");
 
         backBtn.setOnClickListener(this);
