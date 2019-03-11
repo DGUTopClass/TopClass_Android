@@ -168,9 +168,7 @@ public class HWDetailActivity extends AppCompatActivity {
         });
     }
 
-    public void saveMemo(){
+    // todo: attaching file, setting alarm
 
-    }
-
-
+    // todo: back btn event
 }

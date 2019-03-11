@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="50dp"
     android:background="@color/white">
 
     <TextView
+        android:id="@+id/tv_main_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Work Box"
@@ -12,12 +14,31 @@
         android:textSize="20dp"
         android:layout_centerInParent="true"/>
 
-    <ImageView
-        android:layout_width="21dp"
-        android:layout_height="21dp"
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="19dp"
-        android:layout_toLeftOf="@+id/iv_main_more"/>
+        android:layout_toLeftOf="@+id/iv_main_more">
+
+        <ImageView
+            android:id="@+id/iv_main_add_hw"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:src="@drawable/plus"/>
+
+        <TextView
+            android:id="@+id/tv_main_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="과목"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:visibility="invisible"/>
+
+    </FrameLayout>
+
 
     <ImageView
         android:id="@+id/iv_main_more"
@@ -25,7 +46,8 @@
         android:layout_height="21dp"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="14dp" />
+        android:layout_marginRight="14dp"
+        android:src="@drawable/header_menu_btn"/>
 
 
 </RelativeLayout>

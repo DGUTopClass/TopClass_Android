@@ -13,10 +13,6 @@
         android:elevation="1dp"
         android:background="@color/white">
 
-        <include
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        layout="@layout/header_main" />
 
     </FrameLayout>
 

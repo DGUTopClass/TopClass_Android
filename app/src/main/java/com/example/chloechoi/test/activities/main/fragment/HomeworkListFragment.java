@@ -1,35 +1,31 @@
 package com.example.chloechoi.test.activities.main.fragment;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.activities.MainActivity;
-import com.example.chloechoi.test.list.adapter.HomeworkAdapter;
-import com.example.chloechoi.test.model.Homework;
-import com.example.chloechoi.test.utility.Constants;
 
-import java.util.ArrayList;
 
 public class HomeworkListFragment extends Fragment {
 
     HomeworkToBeSubmittedFragment toBeSubmittedFragement;
     HomeworkSubmittedFragment submittedFragment;
 
+    int position = 0;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState){
 
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_hw_list, container, false);
+
 
         toBeSubmittedFragement = new HomeworkToBeSubmittedFragment();
         submittedFragment = new HomeworkSubmittedFragment();
@@ -44,7 +40,7 @@ public class HomeworkListFragment extends Fragment {
         hwTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int position = tab.getPosition();
+                position = tab.getPosition();
 
                 Fragment selected = null;
 
@@ -70,6 +66,10 @@ public class HomeworkListFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    public int getPosition(){
+        return position;
     }
 
 }
