@@ -50,12 +50,12 @@ public class SettingProfileFragment extends Fragment implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-
+/*
         if(v == modifyprofilebtn){
             fragmentTransaction.replace(R.id.main_header, new HeaderFragment());
             fragmentTransaction.replace(R.id.main_body, new SettingProfileModifyFragment());
             fragmentTransaction.commit();
         }
-
+*/
     }
 }

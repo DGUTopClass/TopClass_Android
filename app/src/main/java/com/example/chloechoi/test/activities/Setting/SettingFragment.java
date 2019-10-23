@@ -61,7 +61,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
 
     @Override
     public void onClick(View v) {
-        if(v == profilelayout){  //학번 및 비밀번호 수정 시  -> 프레그먼트 및 헤더 교체
+      /*  if(v == profilelayout){  //학번 및 비밀번호 수정 시  -> 프레그먼트 및 헤더 교체
 
             fragmentTransaction.replace(R.id.main_header, new HeaderFragment());
             fragmentTransaction.replace(R.id.main_body, new SettingProfileFragment());
@@ -74,6 +74,8 @@ public class SettingFragment extends Fragment implements View.OnClickListener, C
             fragmentTransaction.commit();
 
         }
+        */
+
     }
 
 

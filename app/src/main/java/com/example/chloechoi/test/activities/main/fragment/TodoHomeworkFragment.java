@@ -15,39 +15,40 @@ import com.example.chloechoi.test.utility.Constants;
 
 import java.util.ArrayList;
 
-public class HomeworkSubmittedFragment extends Fragment {
+public class TodoHomeworkFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private HomeworkAdapter mAdapter;
     private ArrayList<Homework> item = new ArrayList<Homework>();
 
-    public HomeworkSubmittedFragment(){
+    public TodoHomeworkFragment(){
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_summited_hw, container, false);
+
+
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_to_be_summited_hw, container, false);
 
         initDataset();
 
-        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_summited_hw);
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv_to_be_submmited_hw);
         mRecyclerView.setHasFixedSize(true);
 
-        mAdapter = new HomeworkAdapter(item, Constants.TYPE_SUMMITED_HW);
+        mAdapter = new HomeworkAdapter(item, Constants.TYPE_TO_BE_SUMMITED_HW);
         mRecyclerView.setAdapter(mAdapter);
 
         return rootView;
     }
 
     private void initDataset(){
-
-        if(item.size() > 4)
+        if(item.size() > 3)
             item.clear();
 
-        for (int i = 0; i < 5; i++) {
-            item.add(new Homework().getSummitedDummy());
+        for (int i = 0; i < 4; i++) {
+            item.add(new Homework().getToBeSummitedDummy());
         }
     }
 }

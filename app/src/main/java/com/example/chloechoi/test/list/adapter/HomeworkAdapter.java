@@ -1,20 +1,17 @@
 package com.example.chloechoi.test.list.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
-import com.example.chloechoi.test.list.viewholder.ToBeSummitedHWViewHolder;
+import com.example.chloechoi.test.list.viewholder.TodoHomeworkViewHolder;
 import com.example.chloechoi.test.model.Homework;
 import com.example.chloechoi.test.R;
-import com.example.chloechoi.test.list.viewholder.SummitedHWViewHolder;
+import com.example.chloechoi.test.list.viewholder.EndHomeworkViewHolder;
 import com.example.chloechoi.test.utility.Constants;
 
 import java.text.ParseException;
@@ -29,7 +26,7 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     Context mContext;
     Constants constants = new Constants();
 
-    int[] layouts = {R.layout.li_to_be_summited_hw, R.layout.li_summited_hw};
+    int[] layouts = {R.layout.item_todo_hw, R.layout.item_end_hw};
 
     int type;
     public HomeworkAdapter(ArrayList<Homework> itemList, int type) {
@@ -48,14 +45,14 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     RecyclerView.ViewHolder initViewHolder(View v){
-        if(type == 0) return new ToBeSummitedHWViewHolder(v);
-        else return new SummitedHWViewHolder(v);
+        if(type == 0) return new TodoHomeworkViewHolder(v);
+        else return new EndHomeworkViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int i) {
         if(type == constants.TYPE_TO_BE_SUMMITED_HW){
-            ToBeSummitedHWViewHolder castedHolder = (ToBeSummitedHWViewHolder) holder;
+            TodoHomeworkViewHolder castedHolder = (TodoHomeworkViewHolder) holder;
 
             castedHolder.vPriority.setBackgroundColor(setPriority("2019-02-27"));
             // castedHolder.vPriority.setBackgroundColor(mContext.getResources().getColor(R.color.hw_priority_2));
@@ -67,7 +64,7 @@ public class HomeworkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             castedHolder.tvDeadLine.setText(dataList.get(i).getDeadline());
         }
         else{
-            final SummitedHWViewHolder castedHolder = (SummitedHWViewHolder) holder;
+            final EndHomeworkViewHolder castedHolder = (EndHomeworkViewHolder) holder;
 
             castedHolder.tvTitle.setText(dataList.get(i).getTitle());
             castedHolder.tvSubject.setText(dataList.get(i).getSubject());

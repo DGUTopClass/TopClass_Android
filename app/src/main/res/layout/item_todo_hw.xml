@@ -8,7 +8,7 @@
 
 
     <View
-        android:id="@+id/v_priority"
+        android:id="@+id/item_todo_hw_v_priority"
         android:layout_width="8dp"
         android:layout_height="60dp"
         android:background="@color/hw_priority_1"
@@ -23,19 +23,21 @@
         android:layout_marginLeft="22dp">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/item_todo_hw_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="과제 01"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:singleLine="true"
+            android:layout_marginRight="22dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp">
 
             <TextView
-                android:id="@+id/tv_subject"
+                android:id="@+id/item_todo_hw_tv_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="데이터통신입문"
@@ -43,7 +45,7 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:id="@+id/tv_deadline"
+                android:id="@+id/item_todo_hw_tv_deadline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="12/29 17:00"

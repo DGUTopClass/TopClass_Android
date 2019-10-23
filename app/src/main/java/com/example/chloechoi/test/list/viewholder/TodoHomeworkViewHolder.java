@@ -9,17 +9,17 @@ import android.widget.TextView;
 import com.example.chloechoi.test.R;
 import com.example.chloechoi.test.interfaces.HomeworkViewHolder;
 
-public class ToBeSummitedHWViewHolder extends RecyclerView.ViewHolder {
+public class TodoHomeworkViewHolder extends RecyclerView.ViewHolder {
     public View vPriority;
     public TextView tvTitle;
     public TextView tvSubject;
     public TextView tvDeadLine;
 
-    public ToBeSummitedHWViewHolder(View itemView) {
+    public TodoHomeworkViewHolder(View itemView) {
         super(itemView);
-        vPriority = (View) itemView.findViewById(R.id.v_priority);
-        tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
-        tvSubject = (TextView) itemView.findViewById(R.id.tv_subject);
-        tvDeadLine = (TextView) itemView.findViewById(R.id.tv_deadline);
+        vPriority = (View) itemView.findViewById(R.id.item_todo_hw_v_priority);
+        tvTitle = (TextView) itemView.findViewById(R.id.item_todo_hw_tv_title);
+        tvSubject = (TextView) itemView.findViewById(R.id.item_todo_hw_tv_subject);
+        tvDeadLine = (TextView) itemView.findViewById(R.id.item_todo_hw_tv_deadline);
     }
 }

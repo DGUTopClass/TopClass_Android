@@ -6,37 +6,72 @@
     android:background="@color/backgroundColor"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
-        android:id="@+id/main_header"
+    <RelativeLayout
+        android:id="@+id/act_main_header"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        android:background="@color/white">
 
-    </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work Box"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"/>
+
+        <ImageView
+            android:id="@+id/act_main_iv_add"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/black"
+            android:layout_toLeftOf="@+id/act_main_iv_menu"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/act_main_iv_subject"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/colorAccent"
+            android:layout_toLeftOf="@+id/act_main_iv_menu"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/act_main_iv_menu"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@color/btnSelected"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
 
     <FrameLayout
-        android:id="@+id/main_body"
+        android:id="@+id/act_main_fl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/main_header">
+        android:layout_below="@+id/act_main_header">
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/vp_main_page"
+            android:id="@+id/act_main_vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/circle_indicator_layout">
-
+            android:layout_marginBottom="40dp">
         </android.support.v4.view.ViewPager>
 
         <RelativeLayout
+            android:id="@+id/act_main_rl_circle_indicator"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/circle_indicator_layout"
             android:gravity="center"
-
-            >
+            android:layout_gravity="bottom">
 
             <com.pm10.library.CircleIndicator
-                android:id="@+id/circle_indicator"
+                android:id="@+id/act_main_ci"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:p_gap="20dp"
@@ -44,11 +79,8 @@
                 app:p_strokeWidth="2dp"
                 app:p_defaultColor="@color/white"
                 app:p_selectedColor="@color/mainColor"
-                app:p_strokeColor="@color/mainColor"/>
+                app:p_strokeColor="@color/mainColor" />
 
         </RelativeLayout>
     </FrameLayout>
-
-
-
 </RelativeLayout>
